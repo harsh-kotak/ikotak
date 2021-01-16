@@ -1,0 +1,21 @@
+# section information
+section:
+  name: Achievements
+  id: achievements
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your achievements achievements
+achievements:
+- title: Cisco Certified
+  image: /images/sections/achievements/ccnp.png
+  summary: Cisco Certified Network Professional
+- title: Teaching Assistant
+  image: /images/sections/achievements/teach.jpg
+  summary: Teaching Assistantship for the Network Management course under Dr. Levi Perigo at CU Boulder.
+- title: Award winner
+  image: /images/sections/achievements/woman-winner.jpg
+  summary: Received James Claggett Memorial Fellowship Award at CU Boulder.

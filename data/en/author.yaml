@@ -1,0 +1,17 @@
+# some information about you
+name: "Harsh Kotak"
+nickname: "Harsh"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
+image: "images/author/Kotak.jpg"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "harsh@ikotak.com"
+  phone: "+1-7205199024"
+
+# some summary about what you do
+summary:
+  - I am a Network Engineer
+  - I am a Cloud Engineer
+  - I love servers
+  - I like to work on fun projects

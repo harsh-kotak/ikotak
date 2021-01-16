@@ -1,0 +1,50 @@
+# section information
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+# Your experiences
+experiences:
+- company:
+    name: Charter Communications
+    url: "https://www.spectrum.com"
+    location: Denver, CO
+    # company overview
+    overview: Charter Communications is a leading broadband connectivity company and cable operator serving more than 30 million customers in 41 states through its Spectrum brand.
+  positions:
+  - designation: Senior Network Engineer
+    start: June 2016
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    # end: Dec 2020
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Working on the datacenter network, NFV and platform architecture team at Charter Advanced Engineering.
+    - Responsibilities include building network/system designs and POC technologies.
+    - Worked on developing Python Django based utility around terransible to create, configure and destroy Kubernetes clusters. The project also performed integration tests intended to be run by a pipeline.
+    - Evaluate, test, and design all components of NFV including NFVI, SDN and MANO for edge and datacenter use cases.
+    - Certified use of packet acceleration technologies and SmartNICs for OpenStack and NFV cloud.
+    - Developed ansible playbooks to automate provisioning and management of Red Hat OpenStack clouds.
+    - Worked on installation, configuration, administration, and troubleshooting of OpenStack and Ceph.
+    - Developed test cases and perform certification testing of datacenter switching platforms.
+    - Worked on redesign, build and management of lab consisting 70+ racks of infrastructure from the ground up including network, compute, storage, virtualization and shared services.
+    - Collaborate with different video and software engineering to standardize solution and implementation options.
+    - Created and reviewed design specification, system builds, configuration and associated documentation.
+
+- company:
+    name: Comcast
+    url: "https://www.comcast.com"
+    location: Denver, CO
+    overview: Comcast is the largest provider of cable television, internet, telephone, and wireless services in the United States.
+  positions:
+  - designation: Automation Engineer Intern
+    start: May 2015
+    end: Aug 2015
+    responsibilities:
+    - Worked within the EPS Voice Engineering department of Comcast to automate tasks and support Big Data Analytics.
+    - Developed stored procedures and ETL tools in Microsoft SQL Server to process CDR and other usage data from switches.
+

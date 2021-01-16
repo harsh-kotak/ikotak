@@ -1,0 +1,32 @@
+# section information
+section:
+  name: Education
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+degrees:
+- name: Masters in Telecommunications Engineerin
+  icon: fa-graduation-cap
+  timeframe: 2014-2016
+  institution:
+    name: University of Colorado Boulder
+    url: "https://www.colorado.edu/"
+  grade: #(optional)
+    scale: GPA
+    achieved: 3.7
+    outOf: 4
+- name: Bachelors in Electronics & Telecommunication Engineering
+  icon: fa-university
+  timeframe: 2010-2014
+  institution:
+    name: University of Mumbai
+    url: "https://mu.ac.in/"
+  grade:
+    scale: GPA
+    achieved: 3.6
+    outOf: 4
