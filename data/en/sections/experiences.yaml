@@ -23,8 +23,7 @@ experiences:
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Working on the datacenter network, NFV and platform architecture team at Charter Advanced Engineering.
-    - Responsibilities include building network/system designs and POC technologies.
+    - Working on the datacenter network, NFV and platform architecture team at Charter Advanced Engineering. Responsibilities include building network/system designs and POC technologies.
     - Worked on developing Python Django based utility around terransible to create, configure and destroy Kubernetes clusters. The project also performed integration tests intended to be run by a pipeline.
     - Evaluate, test, and design all components of NFV including NFVI, SDN and MANO for edge and datacenter use cases.
     - Certified use of packet acceleration technologies and SmartNICs for OpenStack and NFV cloud.
