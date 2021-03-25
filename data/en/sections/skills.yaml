@@ -12,40 +12,40 @@ section:
 # Give a summary of you each skill in the summary section.
 skills:
 - name: IP Networking
-  icon: "/images/sections/skills/tcp.png"
+  logo: "/images/sections/skills/tcp.png"
   summary: "Experience with installation, configuration and operation of network devices such as Cisco, Arista, Juniper and Cumulus."
 
 - name: Routing Protocols
-  icon: "/images/sections/skills/router.png"
+  logo: "/images/sections/skills/router.png"
   summary: "RIP, OSPF, BGP, MPLS"
 
 - name: Switching
-  icon: "/images/sections/skills/switch.png"
+  logo: "/images/sections/skills/switch.png"
   summary: "VLAN, STP, LACP, MC-LAG, FabricPath, FHRP"
 
 - name: Virtualization / Cloud
-  icon: "/images/sections/skills/cloud.png"
+  logo: "/images/sections/skills/cloud.png"
   summary: "OpenStack (TripleO, Kolla-Ansible), KVM, VMware, AWS, Ceph, AVI, Juniper Contrail, Nokia Nuage"
 
 - name: Packet Acceleration
-  icon: "/images/sections/skills/speed.png"
+  logo: "/images/sections/skills/speed.png"
   summary: "SR-IOV, DPDK, VPP, NUMA, OVS Offload, SmartNICs"
 
 - name: Python
-  icon: "/images/sections/skills/python.png"
+  logo: "/images/sections/skills/python.png"
   summary: "Using as the main language for professional development. Capable of writing scalable, testable, and maintainable programs."
   url: "https://www.python.org/"
 
 - name: Container Orchestration
-  icon: "/images/sections/skills/kubernetes.png"
+  logo: "/images/sections/skills/kubernetes.png"
   summary: "Docker, Kubernetes, Helm, Rancher, Portworx"
   url: "https://kubernetes.io/"
 
 - name: Tooling
-  icon: "/images/sections/skills/tooling.png"
+  logo: "/images/sections/skills/tooling.png"
   summary: "Ansible, Terraform, Git, Jenkins, RH Satellite, EVE-NG, Ixia, TRex, Keycloak, Cloudify, vSphere, VRealize, UCS Manager"
 
 - name: Linux
-  icon: "/images/sections/skills/linux.png"
+  logo: "/images/sections/skills/linux.png"
   summary: "Equipped with Linux system administration experience including configuration, troubleshooting and maintenance."
 

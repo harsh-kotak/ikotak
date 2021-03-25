@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Posts</title>
+    <title>Search Results</title>
     
 
 
@@ -152,64 +152,29 @@ if (!doNotTrack) {
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
     <div class="container-fluid post-card-holder" id="post-card-holder">
-      
-      
-        <div class="post-card">
-  <a href="/posts/introduction/" class="post-card-link">
-    <div class="card">
-      <div class="card-head">
-        <img class="card-img-top" src='/posts/introduction/hero.svg'/>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Introduction</h5>
-        <p class="card-text post-summary">Greeting! This is an introduction post.
-Complete Post Coming Soon&hellip; </p>
-      </div>
-      <div class="card-footer">
-        <span class="float-left">November 30, 2020</span>
-        <a
-        href="/posts/introduction/"
-        class="float-right btn btn-outline-info btn-sm"
-        >Read</a
-        >
-      </div>
-    </div>
-  </a>
-</div>
+      <div id="search-results">
 
-      
-        <div class="post-card">
-  <a href="/search/" class="post-card-link">
-    <div class="card">
-      <div class="card-head">
-        <img class="card-img-top" src='/images/default-hero.jpg'/>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Search Results</h5>
-        <p class="card-text post-summary">This file exists solely to respond to /search URL with the related search layout template.
-No content shown here is rendered, all content is based in the template layouts/page/search.html
-Setting a very low sitemap priority will tell search engines this is not important content.
-This implementation uses Fusejs, jquery and mark.js
-Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```</p>
-      </div>
-      <div class="card-footer">
-        <span class="float-left">January 1, 0001</span>
-        <a
-        href="/search/"
-        class="float-right btn btn-outline-info btn-sm"
-        >Read</a
-        >
-      </div>
-    </div>
-  </a>
-</div>
+        <script id="search-result-template" type="text/x-js-template">
+          <div class="post-card">
+            <a href="${link}" class="post-card-link">
+              <div class="card" style="min-height: 352px;"><a href="${link}" class="post-card-link">
+                <div class="card-head">
+                  <img class="card-img-top" src="${hero}">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">${title}</h5>
+                  <p class="card-text post-summary">${summary}</p>
+                </div>
+                <div class="card-footer">
+                  <span class="float-left">${date}</span>
+                  <a href="${link}" class="float-right btn btn-outline-info btn-sm">Read</a>
+                </div>
+              </div>
+	          </a>
+          </div>
+        </script>
 
-      
-    </div>
-    <div class="paginator">
-      
-
-
+      </div>
     </div>
   </div>
 </section>
@@ -355,7 +320,9 @@ Initial setup Search depends on additional output content type of JSON in config
 
     
     
-    <script src="/js/list.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="https://ikotak.com/js/search.js"></script>
 
   </body>
 </html>

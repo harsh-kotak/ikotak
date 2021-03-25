@@ -27,6 +27,10 @@ socialLinks:
   icon: "fas fa-envelope"
   url: "harsh.kotak9@gmail.com"
 
+- name: Phone
+  icon: "fas fa-phone"
+  url: "+1-7205199024"
+
 - name: Github
   icon: "fab fa-github"
   url: "https://www.github.com/harsh-kotak"
