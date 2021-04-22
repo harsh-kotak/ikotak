@@ -8,6 +8,19 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Nov 2020 08:06:25 +0600</lastBuildDate><atom:link href="https://ikotak.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Search Results</title>
+      <link>https://ikotak.com/search/</link>
+      <pubDate>Tue, 08 Jun 2010 08:06:25 +0600</pubDate>
+      
+      <guid>https://ikotak.com/search/</guid>
+      <description>This file exists solely to respond to /search URL with the related search layout template.
+No content shown here is rendered, all content is based in the template layouts/page/search.html
+Setting a very low sitemap priority will tell search engines this is not important content.
+This implementation uses Fusejs, jquery and mark.js
+Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&amp;ldquo;HTML&amp;rdquo;, &amp;ldquo;JSON&amp;rdquo;] ```</description>
+    </item>
+    
+    <item>
       <title>Introduction</title>
       <link>https://ikotak.com/posts/introduction/</link>
       <pubDate>Mon, 30 Nov 2020 08:06:25 +0600</pubDate>

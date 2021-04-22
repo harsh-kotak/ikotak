@@ -15,17 +15,17 @@ skills:
   logo: "/images/sections/skills/tcp.png"
   summary: "Experience with installation, configuration and operation of network devices such as Cisco, Arista, Juniper and Cumulus."
 
-- name: Routing Protocols
+- name: Routing
   logo: "/images/sections/skills/router.png"
-  summary: "RIP, OSPF, BGP, MPLS"
+  summary: "RIP, OSPF, BGP, MPLS, VRF, IPv6"
 
 - name: Switching
   logo: "/images/sections/skills/switch.png"
-  summary: "VLAN, STP, LACP, MC-LAG, FabricPath, FHRP"
+  summary: "VLAN, STP, LACP, MC-LAG, FabricPath, FHRP, VXLAN"
 
-- name: Virtualization / Cloud
+- name: IaaS / Cloud
   logo: "/images/sections/skills/cloud.png"
-  summary: "OpenStack (TripleO, Kolla-Ansible), KVM, VMware, AWS, Ceph, AVI, Juniper Contrail, Nokia Nuage"
+  summary: "OpenStack (TripleO, Kolla-Ansible), KVM, VMware (vSphere, NSX), AWS, Ceph, Juniper Contrail, Nokia Nuage"
 
 - name: Packet Acceleration
   logo: "/images/sections/skills/speed.png"
@@ -43,7 +43,7 @@ skills:
 
 - name: Tooling
   logo: "/images/sections/skills/tooling.png"
-  summary: "Ansible, Terraform, Git, Jenkins, RH Satellite, EVE-NG, Ixia, TRex, Keycloak, Cloudify, vSphere, VRealize, UCS Manager"
+  summary: "Ansible, Terraform, Git, Jenkins, Artifactory, RH Satellite, EVE-NG, Ixia, TRex, Cloudify, UCS Manager"
 
 - name: Linux
   logo: "/images/sections/skills/linux.png"
