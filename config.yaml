@@ -35,8 +35,8 @@ disqusShortname: harsh-kotak
 outputs:
   home:
   - HTML
-  - JSON
   - RSS
+  - JSON
 
 # Enable global emoji support
 enableEmoji: true

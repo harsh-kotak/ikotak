@@ -17,7 +17,7 @@ skills:
 
 - name: Routing
   logo: "/images/sections/skills/router.png"
-  summary: "RIP, OSPF, BGP, MPLS, VRF, IPv6"
+  summary: "OSPF, BGP, EVPN, MPLS, VRF, IPv6"
 
 - name: Switching
   logo: "/images/sections/skills/switch.png"

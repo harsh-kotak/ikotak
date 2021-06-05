@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenvSwitch CLI Guide</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/site/favicon_hu7f66e80bd04f40c57f534abac408dd24_36192_42x0_resize_box_2.png" />
+
+<meta property="og:title" content="OpenvSwitch CLI Guide" />
+<meta property="og:description" content="OpenvSwitch CLI Guide" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikotak.com/posts/openvswitch/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-08T06:15:40&#43;06:00" />
+<meta property="article:modified_time" content="2020-12-08T06:15:40&#43;06:00" />
+
+
+
+    
+    
+<meta name="description" content="OpenvSwitch CLI Guide" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-46102381-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/site/main-logo_hub8ffd90d243095562f53699fbcd97763_9695_42x0_resize_box_2.png" alt="Logo">
+      Harsh Kotak</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/site/main-logo_hub8ffd90d243095562f53699fbcd97763_9695_42x0_resize_box_2.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/site/inverted-logo_hu891b713ccd2e44f259b77b873cb764ab_10519_42x0_resize_box_2.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/introduction/" title="Introduction">Introduction</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/openvswitch/" title="OpenvSwitch Guide">OpenvSwitch Guide</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://ikotak.com/posts/openvswitch/ovs.svg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/Kotak_hu9b48980b1af3ee39a5b9c70279ef0fc2_95565_120x120_fit_q75_box.jpg' alt="Author Image">
+          <h5 class="author-name">Harsh Kotak</h5>
+          <p>December 8, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>OpenvSwitch CLI Guide</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <p>This article provides information about OVS commands that can be used to troubleshoot OpenvSwitch related issues.</p>
+<h3 id="what-is-open-vswitch">What is Open vSwitch?</h3>
+<p>Open vSwitch is a software implementation of a virtual multilayer network switch, designed to enable effective network automation through programmatic extensions, while supporting standard management interfaces and protocols such as NetFlow, sFlow, SPAN, RSPAN, CLI, LACP and <abbr title="IEEE standard which defines protocols and practices for OAM (Operations, Administration, and Maintenance) for paths through 802.1 bridges and local area networks (LANs)">802.1ag</abbr>.</p>
+<hr>
+<h3 id="ovs-base-commands">OVS Base Commands</h3>
+<p>OVS is a feature rich vSwitch with different configuration commands, but the majority of the configuration and troubleshooting can be accomplished with the following four commands:</p>
+<ul>
+<li><strong>ovs-vsctl</strong> : Used for configuring the ovs-vswitchd configuration database (known as ovs-db)</li>
+<li><strong>ovs-ofctl</strong> : A command line tool for monitoring and administering OpenFlow switches</li>
+<li><strong>ovs-dpctl</strong> : Used to administer Open vSwitch datapaths</li>
+<li><strong>ovs−appctl</strong> : Used for querying and controlling Open vSwitch daemons</li>
+</ul>
+<hr>
+<h4 id="ovs-vsctl">ovs-vsctl</h4>
+<p>This tool is used for configuration and viewing OVS switch operations. Port configuration, bridge additions/deletions, bonding, and VLAN tagging are just some of the options that are available with this command. Below are the most useful show commands:</p>
+<p><kbd>ovs-vsctl –V</kbd> : Prints the current version of openvswitc</p>
+<p><kbd>ovs-vsctl show</kbd> : Prints a brief overview of the switch database configuration</p>
+<p><kbd>ovs-vsctl list-br</kbd> : Prints a list of configured bridges</p>
+<p><kbd>ovs-vsctl list-ports &lt;bridge&gt;</kbd> : Prints a list of ports on a specific bridge</p>
+<p><kbd>ovs-vsctl list interface</kbd> : Prints a list of interfaces</p>
+<p>The above should be fairly self explanatory. Below are the common switch configuration commands:</p>
+<p><kbd>ovs-vsctl add-br &lt;bridge&gt;</kbd> : Creates a bridge in the switch database.</p>
+<p><kbd>ovs-vsctl add-port &lt;bridge&gt; &lt;interface&gt;</kbd> : Binds an interface (physical or virtual) to a bridge.</p>
+<p><kbd>ovs-vsctl add-port &lt;bridge&gt; &lt;interface&gt; tag=&lt;VLAN number&gt;</kbd> : Converts port to an access port on specified VLAN (by default all OVS ports are VLAN trunks).</p>
+<p><kbd>ovs-vsctl set interface &lt;interface&gt; type=patch options:peer=&lt;interface&gt;</kbd> : Used to create patch ports to connect two or more bridges together.</p>
+<hr>
+<h4 id="ovs-ofctl">ovs-ofctl</h4>
+<p>This tool is used for administering and monitoring OpenFlow switches. Even if OVS isn&rsquo;t configured for centralized administration, ovs-ofctl can be used to show the current state of OVS including features, configuration, and table entries.</p>
+<p>Below are common show commands:</p>
+<p><kbd>ovs-ofctl show &lt;bridge&gt;</kbd> : Shows OpenFlow features and port descriptions.</p>
+<p><kbd>ovs-ofctl snoop &lt;bridge&gt;</kbd> : Snoops traffic to and from the bridge and prints to console.</p>
+<p><kbd>ovs-ofctl dump-flows &lt;bridge&gt; &lt;flow&gt;</kbd> : Prints flow entries of specified bridge. With the flow specified, only the matching flow will be printed to console. If the flow is omitted, all flow entries of the bridge will be printed.</p>
+<p><kbd>ovs-ofctl dump-ports-desc &lt;bridge&gt;</kbd> : Prints port statistics. This will show detailed information about interfaces in this bridge, include the state, peer, and speed information. Very useful for viewing port connectvity and detecting errors in NIC to bridge bonding.</p>
+<p><kbd>ovs-ofctl dump-tables-desc &lt;bridge&gt;</kbd> : Similar to above but prints the descriptions of tables belonging to the stated bridge.</p>
+<p>Below are the common configurations used with the ovs-ofctl tool:</p>
+<p><kbd>ovs-ofctl add-flow &lt;bridge&gt; &lt;flow&gt;</kbd> : Adds a static flow to the specified bridge. Useful in defining conditions for a flow (i.e. prioritize, drop, etc).</p>
+<p><kbd>ovs-ofctl del-flows &lt;bridge&gt; &lt;flow&gt;</kbd> : Deletes the flow entries from flow table of stated bridge. If the flow is omitted, all flows in specified bridge will be deleted.</p>
+<p>The above commands can take many arguments regarding different field to match. They can be used for simple source/destination flow additions to complex L3 rewriting like SNAT, DNAT, etc. You can even build a functional router with them!</p>
+<hr>
+<h4 id="ovs-dpctl">ovs-dpctl</h4>
+<p>ovs-dpctl is very similar to ovs-ofctl in that they both show flow table entries. The flows that ovs-dpctl prints are always an exact match and reflect packets that have actually passed through the system within the last few seconds. ovs-dpctl queries a kernel datapath and not an OpenFlow switch. This is why it&rsquo;s useful for debugging flow data.</p>
+<p>OVS uses a single datapath that is shared by all bridges of that type. In order to create a new datapath, use the following:</p>
+<p><kbd>ovs-dpctl add-dp dp1;
+ovs-dpctl add-if dp1 eth0</kbd></p>
+<p><kbd>ovs-dpctl dump-flows</kbd> : Use the following to view flow table data.</p>
+<hr>
+<h4 id="ovs-appctl">ovs-appctl</h4>
+<p>OVS is comprised of several daemons that manage and control an Open vSwitch switch. ovs-appctl is a utility for managing these daemons at runtime. It is useful for configuring log module settings as well as viewing all OpenFlow flows, including hidden ones.</p>
+<p>The following are useful commands to use:</p>
+<p><kbd>ovs-appctl bridge/dump-flows &lt;bridge&gt;</kbd> : Dumps OpenFlow flows, including hidden flows. Useful for troubleshooting in-band issues.</p>
+<p><kbd>ovs-appctl dpif/dump-flows &lt;bridge&gt;</kbd> : Dumps datapath flows for only the specified bridge, regardless of the type.</p>
+<p><kbd>ovs-appctl vlog/list</kbd> : Lists the known logging modules and their current levels. Use ovs-appctl vlog/set to set/change the module log level.</p>
+<p><kbd>ovs-appctl ofproto/trace</kbd> : Used to show entire flow field of a given flow (flow, matched rule, action taken).</p>
+<p><kbd>ovs-appctl fdb/show &lt;bridge&gt;</kbd> : Lists each MAC address/VLAN pair learned by the specified bridge, along with the port on which it was learned and the age of the entry, in seconds.</p>
+<p><kbd>ovs-appctl fdb/flush &lt;bridge&gt;</kbd> : Flushes bridge MAC address learning table, or all learning tables if no bridge is given.</p>
+<p><kbd>ovs-appctl fdb/stats-show &lt;bridge&gt;</kbd> : Shows MAC address learning table statistics for the specified bridge.</p>
+<p><kbd>ovs-appctl fdb/stats-clear &lt;bridgegt;</kbd> : Clears bridge MAC address learning table statistics, or all statistics if no bridge is given.</p>
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://ikotak.com/edit//content/posts/openvswitch/index.md" title="Improve this page" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/search/" title="Search Results" class="btn btn-outline-info">
+          <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+          <div class="next-prev-text">Search Results</div>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/introduction/" title="Introduction" class="btn btn-outline-info">
+            <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+            <div class="next-prev-text">Introduction</div>
+          </a>
+        </div>
+      
+    
+  
+
+</div>
+
+      <hr />
+      
+      
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost") return;
+
+    var dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    var disqus_shortname = "harsh-kotak";
+    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(dsq);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+<a href="https://disqus.com/" class="dsq-brlink"
+  >comments powered by <span class="logo-disqus">Disqus</span></a
+>
+
+      
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-is-open-vswitch">What is Open vSwitch?</a></li>
+        <li><a href="#ovs-base-commands">OVS Base Commands</a>
+          <ul>
+            <li><a href="#ovs-vsctl">ovs-vsctl</a></li>
+            <li><a href="#ovs-ofctl">ovs-ofctl</a></li>
+            <li><a href="#ovs-dpctl">ovs-dpctl</a></li>
+            <li><a href="#ovs-appctl">ovs-appctl</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+      
+  
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#skills">Skills</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#experiences">Experiences</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#education">Education</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#achievements">Achievements</a>
+                </li>
+              
+              
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+            <li><span>Email: </span> <span>harsh@ikotak.com</span></li>
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://ikotak.com/" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu891b713ccd2e44f259b77b873cb764ab_10519_32x0_resize_box_2.png" alt="Toha Theme Logo">
+            iKotak
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2021 All rights reserved.</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>
