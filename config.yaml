@@ -25,7 +25,8 @@ markup:
     ordered: false
 
 # Enable Google Analytics
-googleAnalytics: UA-46102381-2
+googleAnalytics: G-637GG6DJ2M
+  #UA-46102381-2
 
 # Enable Disqus forum
 disqusShortname: harsh-kotak

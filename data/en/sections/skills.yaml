@@ -17,7 +17,7 @@ skills:
 
 - name: Routing
   logo: "/images/sections/skills/router.png"
-  summary: "OSPF, BGP, EVPN, MPLS, VRF, IPv6"
+  summary: "OSPF, BGP, MPLS, Multicast, VRF, IPv6"
 
 - name: Switching
   logo: "/images/sections/skills/switch.png"
@@ -43,7 +43,7 @@ skills:
 
 - name: Tooling
   logo: "/images/sections/skills/tooling.png"
-  summary: "Ansible, Terraform, Git, Jenkins, Artifactory, RH Satellite, EVE-NG, Ixia, TRex, Cloudify, UCS Manager"
+  summary: "Ansible, Terraform, Git, Jenkins, Artifactory, RH Satellite, Itential, Cloudify, EVE-NG, Ixia, TRex, UCS Manager"
 
 - name: Linux
   logo: "/images/sections/skills/linux.png"

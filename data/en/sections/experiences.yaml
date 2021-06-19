@@ -24,7 +24,7 @@ experiences:
     # give some points about what was your responsibilities at the company.
     responsibilities:
     - Working on the datacenter network, NFV and platform architecture team at Charter Advanced Engineering. Responsibilities include planning, design, implementation and optimization of network systems.
-    - Worked on development of containers as a service platform to deploy and manage scalable Kubernetes clusters.
+    - Worked on development of containers as a service platform to deploy and manage scalable Kubernetes clusters across vSphere and AWS.
     - Incorporate test and build pipelines for a full stack deployment with infrastructure, Kubernetes and application charts.
     - Evaluate, test, and design all components of NFV including NFVI, VIM and NFVO for edge and datacenter use cases.
     - Certified use of packet acceleration technologies and SmartNICs for OpenStack and NFV cloud.
