@@ -7,3 +7,13 @@ description: Portfolio and personal blog of Harsh Kotak.
 # specify the list of custom menus that you want to show in the top navbar.
 # they will be separated by a divider from the main menus.
 customMenus:
+  #- name: Posts
+  #  url: https://ikotak.com/posts/
+
+# Specify OpenGraph Headers
+openGraph:
+  title: Harsh Kotak
+  type: website
+  description: Portfolio and personal blog of Harsh Kotak.
+  image: images/author/Kotak.jpg
+  url: https://ikotak.com
