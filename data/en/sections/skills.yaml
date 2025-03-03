@@ -17,15 +17,15 @@ skills:
 
 - name: Routing
   logo: "/images/sections/skills/router.png"
-  summary: "OSPF, BGP, MPLS, Multicast, VRF, IPv6"
+  summary: "BGP, OSPF, Multicast, VRF, IPv6"
 
 - name: Switching
   logo: "/images/sections/skills/switch.png"
-  summary: "VLAN, STP, LACP, MC-LAG, FabricPath, FHRP, VXLAN"
+  summary: "VLAN, STP, LACP, MC-LAG, FHRP, VXLAN"
 
 - name: IaaS / Cloud
   logo: "/images/sections/skills/cloud.png"
-  summary: "OpenStack (TripleO, Kolla-Ansible), KVM, VMware (vSphere, NSX), AWS, Ceph, Juniper Contrail, Nokia Nuage"
+  summary: "AWS, OpenStack, KVM, VMware, Ceph, SDN"
 
 - name: Packet Acceleration
   logo: "/images/sections/skills/speed.png"
@@ -38,12 +38,12 @@ skills:
 
 - name: Container Orchestration
   logo: "/images/sections/skills/kubernetes.png"
-  summary: "Docker, Kubernetes, Helm, Rancher, Portworx"
+  summary: "Docker, Kubernetes(OpenShift, Rancher), Helm, Portworx"
   url: "https://kubernetes.io/"
 
 - name: Tooling
   logo: "/images/sections/skills/tooling.png"
-  summary: "Ansible, Terraform, Git, Jenkins, Artifactory, RH Satellite, Itential, Cloudify, EVE-NG, Ixia, TRex, UCS Manager"
+  summary: "Ansible, Terraform, Git, ArgoCD, Artifactory, RH Satellite, Morpheus, Ixia, TRex, UCS Manager"
 
 - name: Linux
   logo: "/images/sections/skills/linux.png"

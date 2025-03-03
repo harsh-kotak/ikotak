@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ikotak.com/notes/bash/basic/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/go/basic/introduction/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/go/basic/types/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/go/basic/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/go/advanced/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/go/basic/flow-control/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/go/advanced/files/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/openshift/commands/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/network/basics/</loc>
+  </url><url>
     <loc>https://ikotak.com/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
@@ -117,7 +135,18 @@
     <loc>https://ikotak.com/notes/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
   </url><url>
+    <loc>https://ikotak.com/search/</loc>
+    <lastmod>2010-06-08T08:06:25+06:00</lastmod>
+  </url><url>
+    <loc>https://ikotak.com/notes/bash/</loc>
+  </url><url>
     <loc>https://ikotak.com/categories/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/go/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/network/</loc>
+  </url><url>
+    <loc>https://ikotak.com/notes/openshift/</loc>
   </url><url>
     <loc>https://ikotak.com/search/</loc>
     <priority>0.1</priority>

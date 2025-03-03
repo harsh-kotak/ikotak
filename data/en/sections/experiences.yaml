@@ -15,26 +15,33 @@ experiences:
     url: "https://www.spectrum.com"
     location: Denver, CO
     # company overview
-    overview: Charter Communications is a leading broadband connectivity company and cable operator serving more than 30 million customers in 41 states through its Spectrum brand.
+    overview: Charter Communications is a leading broadband connectivity company and cable operator serving more than 32 million customers in 41 states through its Spectrum brand.
   positions:
-  - designation: Senior Network Engineer
-    start: June 2016
+  - designation: Principal Engineer
+    start: Feb 2024
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Working on the datacenter network, NFV and platform architecture team at Charter Advanced Engineering. Responsibilities include planning, design, implementation and optimization of network systems.
-    - Worked on development of containers as a service platform to deploy and manage scalable Kubernetes clusters across vSphere and AWS.
+    - Working on the cloud virtualization architecture team within the network technology group at Charter. Responsibilities include planning, design, implementation, and optimization of virtual and containerized systems.
+    - Lead development of Red Hat OpenShift based Edge data center platform to host container network functions.
+    - Built an ArgoCD GitOps pipeline to automate the management of OpenShift infrastructure and application lifecycles.
+    - Create design specifications, system builds, configuration guides and related documentation.
+    - Contribute to strategic architecture and roadmap development; provide tiered support across organizations.
+
+  - designation: Network Engineer
+    start: June 2016
+    end: September 2021
+    responsibilities:
+    - Worked on developing the data center network architecture and network application delivery solutions at Charter. Responsibilities include configuring lab environments and test/develop new solutions for the data center.
+    - Worked on development of containers as a service platform to deploy scalable Kubernetes clusters on vSphere and AWS.
     - Incorporate test and build pipelines for a full stack deployment with infrastructure, Kubernetes and application charts.
-    - Evaluate, test, and design all components of NFV including NFVI, VIM and NFVO for edge and datacenter use cases.
+    - Evaluate, test, and optimize all components of NFV including NFVI, VIM and NFVO for edge and data center use cases.
     - Certified use of packet acceleration technologies and SmartNICs for OpenStack and NFV cloud.
     - Developed ansible playbooks to automate provisioning and management of Red Hat OpenStack clouds.
     - Worked on installation, configuration, administration, and troubleshooting of OpenStack and Ceph.
-    - Developed test cases and performed certification testing of datacenter switching platforms.
-    - Worked on redesign, build and management of the lab consisting 70+ racks of infrastructure from the ground up including network, compute, storage, virtualization and shared services.
-    - Collaborate with different video and software engineering teams to standardize solution and implementation options.
-    - Participate in strategic architecture and roadmap development; provide tier support across organizations.
-    - Create and review design specification, system builds, configuration and associated documentation.
+    - Developed test cases and performed certification testing of data center switching platforms.
+    - Worked on redesign, build and management of the lab consisting of 70+ racks of infrastructure from the ground up including network, compute, storage, virtualization and shared services.
 
 - company:
     name: Comcast

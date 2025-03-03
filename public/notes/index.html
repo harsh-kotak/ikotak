@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Notes</title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+<link rel="stylesheet" href="/application.ec9820d20e5fc4a26a6ce9fccc5e7e64af3a81756d2a2d91790604b8662353f3.css" integrity="sha256-7Jgg0g5fxKJqbOn8zF5&#43;ZK86gXVtKi2ReQYEuGYjU/M=" />
 
-<link rel="stylesheet" href="/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="/css/layouts/main.css"/>
-<link rel="stylesheet" href="/css/navigators/navbar.css"/>
-<link rel="stylesheet" href="/css/plyr.css"/>
-<link rel="stylesheet" href="/css/flag-icon.min.css"/>
-
-
-<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 
 
 
@@ -29,48 +21,85 @@
   
   
 
-  <link rel="icon" type="image/png" href="/images/site/favicon_hu7f66e80bd04f40c57f534abac408dd24_36192_42x0_resize_box_3.png" />
-
-<meta property="og:title" content="Notes" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ikotak.com/notes/" />
+  <link rel="icon" type="image/png" href="/images/site/favicon_hu_77e843c84dd0c3f6.png" />
 
 
+<link rel="alternate" type="application/rss+xml" href="https://ikotak.com/notes/index.xml" title="Harsh Kotak">
 
-    
-    
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
-  />
-  <link rel="stylesheet" href="/css/layouts/notes.css">
-  <link rel="stylesheet" href="/css/navigators/sidebar.css">
-
+<meta property="og:url" content="https://ikotak.com/notes/">
+  <meta property="og:site_name" content="Harsh Kotak">
+  <meta property="og:title" content="Notes">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
 
     
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Notes">
+
+    
+     
+
+    
+
     
         
+            
+            
+                
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-637GG6DJ2M"></script>
+      <script>
+        var doNotTrack = false;
+        if ( null ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-637GG6DJ2M');
+        }
+      </script>
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+
+            
+
+            
         
-          
-          
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-637GG6DJ2M"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-637GG6DJ2M', { 'anonymize_ip': false });
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
 }
-</script>
+document.documentElement.setAttribute('data-theme', theme)
 
-        
+    </script>
     
   </head>
 
-  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
-    <div class="container-fluid bg-dimmed wrapper">
+  <body class="type-notes kind-section" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
       
       
     
@@ -79,10 +108,22 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   
 
 
   
+
 
 
 
@@ -102,31 +143,183 @@ if (!doNotTrack) {
   
 
 
-<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
   <div class="container">
-      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
-      <span class="navbar-toggler-icon"></span>
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
     </button>
+    
     <a class="navbar-brand" href="/">
       
-        <img src="/images/site/main-logo_hub8ffd90d243095562f53699fbcd97763_9695_42x0_resize_box_3.png" alt="Logo">
+        <img src="/images/site/main-logo_hu_e208627b8822f4a5.png" id="logo" alt="Logo">
       Harsh Kotak</a>
-    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
-      <span class="navbar-toggler-icon"></span>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
     </button>
 
-    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
-      <ul class="navbar-nav ml-auto">
-      
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">About</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#skills">Skills</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#experiences">Experiences</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#education">Education</a>
+                </li>
+              
+            
+            
+              
+              
+            
+            
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                      <a class="dropdown-item" href="/#accomplishments">Accomplishments</a>
+                    
+                  
+                  
+              </div>
+            </li>
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+          </li>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="note-link" href="/notes">Notes</a>
+          </li>
+        
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
       </ul>
     </div>
   </div>
   
   
-    <img src="/images/site/main-logo_hub8ffd90d243095562f53699fbcd97763_9695_42x0_resize_box_3.png" class="d-none" id="main-logo" alt="Logo">
+    <img src="/images/site/main-logo_hu_e208627b8822f4a5.png" class="d-none" id="main-logo" alt="Logo">
   
   
-    <img src="/images/site/inverted-logo_hu891b713ccd2e44f259b77b873cb764ab_10519_42x0_resize_box_3.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+    <img src="/images/site/inverted-logo_hu_d7ac63268c0d135c.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
   
 </nav>
 
@@ -148,6 +341,117 @@ if (!doNotTrack) {
             <li id="list-heading"><a href="/notes" data-filter="all">Notes</a></li>
             <div class="subtree">
                 
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/bash/" title="Bash">Bash</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/notes/go/"> Go</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/notes/go/basic/"> Basics</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/go/basic/introduction/" title="Introduction">Introduction</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/go/basic/types/" title="Basic Types">Basic Types</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/go/basic/flow-control/" title="Flow Control">Flow Control</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/notes/go/advanced/"> Advanced</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/go/advanced/files/" title="File Manipulation">File Manipulation</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/openshift/" title="OpenShift">OpenShift</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/network/" title="Network">Network</a></li>
+  
+
 
             </div>
           </ul>
@@ -165,31 +469,431 @@ if (!doNotTrack) {
       
       
         
+          <!-- Variable -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Variable</span></h5>
         
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>echo $NAME
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Condition -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Condition</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span>$string<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;String is empty&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[[</span> -n <span style="color:#e6db74">&#34;</span>$string<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;String is not empty&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Filter -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Filter</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Filter comment and empty lines from a file</span>
+</span></span><span style="display:flex;"><span>grep -v <span style="color:#e6db74">&#39;^$\|^\s*\#&#39;</span> temp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Filter certs</span>
+</span></span><span style="display:flex;"><span>awk <span style="color:#960050;background-color:#1e0010">&#39;</span>NF <span style="color:#f92672">{</span>sub<span style="color:#f92672">(</span>/<span style="color:#ae81ff">\r</span>/, <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span>; printf <span style="color:#e6db74">&#34;%s\\n&#34;</span>,$0;<span style="color:#f92672">}</span>’ cacerts.pem
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Validate WSS -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>WSS</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Verify endpoint is using secure web sockets</span>
+</span></span><span style="display:flex;"><span>curl -i -N -H <span style="color:#e6db74">&#34;Connection: Upgrade&#34;</span> -H <span style="color:#e6db74">&#34;Upgrade: websocket&#34;</span> -H <span style="color:#e6db74">&#34;Host: ikotak.com&#34;</span> -H <span style="color:#e6db74">&#34;Origin: https://ikotak.com&#34;</span> https://ikotak.com -k
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+
         
       
         
+          <!-- A Sample Program -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Hello World</span></h5>
         
+            <div class="card">
+                <div class="card-body"><p>A sample go program is show here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">message</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">greetMe</span>(<span style="color:#e6db74">&#34;world&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">message</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">greetMe</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Run the program as below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ go run hello.go
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Declaring Variables -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Variables</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><p><strong>Normal Declaration:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">msg</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">msg</span> = <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span></code></pre></div></div>
+            </div>
+        
+            <div class="card">
+                <div class="card-body"><p><strong>Shortcut:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">msg</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Declaring Constants -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Constants</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Phi</span> = <span style="color:#ae81ff">1.618</span>
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+
         
       
         
+          <!-- String Type -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Strings</span></h5>
         
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span></code></pre></div><p>Multiline string</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`Multiline
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">string`</span>
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Number Types -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Numbers</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><p>Typical types</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span>          <span style="color:#75715e">// int</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.</span>         <span style="color:#75715e">// float64</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4i</span>     <span style="color:#75715e">// complex128</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> byte(<span style="color:#e6db74">&#39;a&#39;</span>)  <span style="color:#75715e">// byte (alias for uint8)</span>
+</span></span></code></pre></div><p>Other Types</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">u</span> <span style="color:#66d9ef">uint</span> = <span style="color:#ae81ff">7</span>        <span style="color:#75715e">// uint (unsigned)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#66d9ef">float32</span> = <span style="color:#ae81ff">22.7</span>  <span style="color:#75715e">// 32-bit float</span>
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!----------- Arrays  ------>
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Arrays</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// var numbers [5]int</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span> <span style="color:#f92672">:=</span> [<span style="color:#f92672">...</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Pointers -->
+<div class="note-card medium-note">
+    <div class="item">
+        <h5 class="note-title"><span>Pointers</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">getPointer</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Value is&#34;</span>, <span style="color:#a6e22e">b</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getPointer</span> () (<span style="color:#a6e22e">myPointer</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">234</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">a</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> new(<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#a6e22e">a</span> = <span style="color:#ae81ff">234</span>
+</span></span></code></pre></div><p>Pointers point to a memory location of a variable. Go is fully garbage-collected.</p></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Type Conversion -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Type Conversion</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> float64(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> uint(<span style="color:#a6e22e">i</span>)
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Slice -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Slice</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">slice</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">slice</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#e6db74">&#34;Hello&#34;</span>)
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+
         
       
         
+          <!-- Condition -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Condition</span></h5>
         
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;sunday&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;saturday&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rest</span>()
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;monday&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isTired</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">groan</span>()
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">work</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">doThing</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Uh oh&#34;</span>)
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Switch -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Switch</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">day</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;sunday&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// cases don&#39;t &#34;fall through&#34; by default!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fallthrough</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;saturday&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rest</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">work</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Loop -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Loop</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">count</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;My counter is at&#34;</span>, <span style="color:#a6e22e">count</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">entry</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Jack&#34;</span>,<span style="color:#e6db74">&#34;John&#34;</span>,<span style="color:#e6db74">&#34;Jones&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">entry</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;At position %d, the character %s is present\n&#34;</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">val</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">x</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">guess</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+
         
       
         
+          <!-- Condition -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Condition</span></h5>
         
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;sunday&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;saturday&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rest</span>()
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;monday&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isTired</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">groan</span>()
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">work</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">doThing</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Uh oh&#34;</span>)
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+
         
       
         
+          <!-- Variable -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Operator Install Plan</span></h5>
         
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">##find which one need approval</span>
+</span></span><span style="display:flex;"><span>oc get ip -n my-project -o<span style="color:#f92672">=</span>jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[?(@.spec.approved==false)].metadata.name}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#here how to approve all (if batch approval is desired</span>
+</span></span><span style="display:flex;"><span>oc patch installplan <span style="color:#66d9ef">$(</span>oc get ip -n my-project-o<span style="color:#f92672">=</span>jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[?(@.spec.approved==false)].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> -n my-project --type merge --patch <span style="color:#e6db74">&#39;{&#34;spec&#34;:{&#34;approved&#34;:true}}&#39;</span>  
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+
         
       
         
+          <!-- BGP Summary-->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>BGP Summary</span></h5>
         
+            <div class="card">
+                <div class="card-body"><p>Protocol type: Path Vector<br>
+Type: EGP (External Gateway Protocol)<br>
+Packet Types: Open, Update, KeepAlive, Notification<br>
+Administrative Distance: eBGP: 20; iBGP: 200<br>
+Transport: TCP port 179<br>
+Keepalive 60 sec, hold timer 180<br>
+Neighbor States: Idle -&gt; Active -&gt; Connect -&gt; Open Sent -&gt; Open Confirm -&gt; Established</p>
+<p>1 – Idle: the initial state of a BGP connection. In this state, the BGP speaker is waiting for a BGP start event, generally either the establishment of a TCP connection or the re-establishment of a previous connection. Once the connection is established, BGP moves to the next state.
+2 – Connect: In this state, BGP is waiting for the TCP connection to be formed. If the TCP connection completes, BGP will move to the OpenSent stage; if the connection cannot complete, BGP goes to Active
+3 – Active: In the Active state, the BGP speaker is attempting to initiate a TCP session with the BGP speaker it wants to peer with. If this can be done, the BGP state goes to OpenSent state.
+4 – OpenSent: the BGP speaker is waiting to receive an OPEN message from the remote BGP speaker
+5 – OpenConfirm: Once the BGP speaker receives the OPEN message and no error is detected, the BGP speaker sends a KEEPALIVE message to the remote BGP speaker
+6 – Established: All of the neighbor negotiations are complete. You will see a number, which tells us the number of prefixes the router has received from a neighbor or peer group.</p>
+<p>Path Selection Attributes: (highest) Weight &gt; (highest) Local Preference &gt; Originate &gt; (shortest) AS Path &gt; Origin &gt; (lowest) MED &gt; External &gt; IGP Cost &gt; eBGP Peering &gt; (highest) Router ID</p>
+<p>(Originate: prefer routes that it installed into BGP by itself over a route that another router installed in BGP)</p>
+<p>Authentication: MD5</p>
+<p>BGP Origin codes: i – IGP (injected by “network” statement), e – EGP, ? – Incomplete</p>
+<p>AS number range: Private AS range: 64512 – 65535, Globally (unique) AS: 1 – 64511</p>
+<p>IBGP - can form over hops but use full mesh other routing to next hop does not work (unless IGP is setup, bgp session between 2 loopbacks). IGP synchronization must be IGP is not used for forwarding transit packets. (Redistribute ebgp to igp then back to ebgp). peer between loopbacks for redundancy using update-source lo0 command.</p>
+<p>EBGP multihop command with TTL. also if update-source for lo0 add static route for connectivity</p>
+<p>^ is mutually exclusive with ttl-security hops x</p>
+<p>Inject prefix using network (local, static or igp route in table) or redistribute
+if router does not know how to reach the next hop of prefix, it won’t advertise to other router. make external subnets known internal is risk, use next-hop-self</p>
+<p>Origin has not much use as EGP is obsolete. IGP(network), EGP, incomplete(redistribute)</p>
+<p>Aggregate route using Null0 static address or aggregate-address command</p>
+<p>Atomic_aggregate attribute - indicates prefix is aggregate and not actual destination. not much use</p>
+<p>aggregator attribute - as number and router id originating router</p>
+<p>AS_SET - unordered list of all ASN of all prefix belonging to aggregate rarely used</p>
+<p>ip prefix-list  filter
+ip as-path access-list  filter</p>
+<p>Originator_id and cluster_list prevent loops when using route reflector</p>
+<p>confiderations is similar to route reflector. break into sub-AS. But local-pref, med and next hop are preserved within whole confideration</p>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- BGP Path Selection -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>BGP Path Selection</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><ol>
+<li>Prefer the path with the highest WEIGHT.</li>
+<li>Prefer the path with the highest LOCAL_PREF.</li>
+<li>Prefer the path that was locally originated via a network or aggregate BGP subcommand or through redistribution from an IGP. Local paths that are sourced by the network or redistribute commands are preferred over local aggregates that are sourced by the aggregate-address command.</li>
+<li>Prefer the path with the shortest AS_PATH.</li>
+<li>Prefer the path with the lowest origin type.</li>
+<li>Prefer the path with the lowest multi-exit discriminator (MED).</li>
+<li>Prefer eBGP over iBGP paths.</li>
+<li>Prefer the path with the lowest IGP metric to the BGP next hop.</li>
+<li>Determine if multiple paths require installation in the routing table for BGP Multipath.</li>
+<li>When both paths are external, prefer the path that was received first (the oldest one).</li>
+<li>Prefer the route that comes from the BGP router with the lowest router ID.</li>
+<li>If the originator or router ID is the same for multiple paths, prefer the path with the minimum cluster list length.</li>
+<li>Prefer the path that comes from the lowest neighbor address.</li>
+</ol>
+<p>“We Love Oranges AS Oranges Mean Pure Refreshment”</p></div>
+            </div>
+        
+    </div>
+</div>
+
+
         
       
         
@@ -209,13 +913,13 @@ if (!doNotTrack) {
       
     <ul class="pagination pagination-default">
       <li class="page-item disabled">
-        <a href="#" aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
       </li>
       <li class="page-item disabled">
-        <a href="#" aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
       </li>
       <li class="page-item active">
-        <a href="#" aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
       </li>
       <li class="page-item">
         <a href="/notes/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
@@ -249,6 +953,7 @@ if (!doNotTrack) {
 
 
 
+
   
   
     
@@ -257,6 +962,9 @@ if (!doNotTrack) {
   
   
     
+  
+
+  
   
 
   
@@ -287,9 +995,9 @@ if (!doNotTrack) {
   
   
 
-  <footer class="container-fluid text-center align-content-center footer pb-2">
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
     <div class="container pt-5">
-      <div class="row text-left">
+      <div class="row text-start">
         
         <div class="col-md-4 col-sm-12">
           <h5>Navigation</h5>
@@ -301,7 +1009,7 @@ if (!doNotTrack) {
                   
                 
                 <li class="nav-item">
-                  <a class="smooth-scroll" href="/#about">About</a>
+                  <a class="smooth-scroll" href="https://ikotak.com/#about">About</a>
                 </li>
               
               
@@ -310,7 +1018,7 @@ if (!doNotTrack) {
                   
                 
                 <li class="nav-item">
-                  <a class="smooth-scroll" href="/#skills">Skills</a>
+                  <a class="smooth-scroll" href="https://ikotak.com/#skills">Skills</a>
                 </li>
               
               
@@ -319,7 +1027,7 @@ if (!doNotTrack) {
                   
                 
                 <li class="nav-item">
-                  <a class="smooth-scroll" href="/#experiences">Experiences</a>
+                  <a class="smooth-scroll" href="https://ikotak.com/#experiences">Experiences</a>
                 </li>
               
               
@@ -328,7 +1036,7 @@ if (!doNotTrack) {
                   
                 
                 <li class="nav-item">
-                  <a class="smooth-scroll" href="/#education">Education</a>
+                  <a class="smooth-scroll" href="https://ikotak.com/#education">Education</a>
                 </li>
               
               
@@ -337,10 +1045,13 @@ if (!doNotTrack) {
                   
                 
                 <li class="nav-item">
-                  <a class="smooth-scroll" href="/#achievements">Achievements</a>
+                  <a class="smooth-scroll" href="https://ikotak.com/#accomplishments">Accomplishments</a>
                 </li>
               
               
+            
+              
+            
           </ul>
           
         </div>
@@ -350,7 +1061,11 @@ if (!doNotTrack) {
           <h5>Contact me:</h5>
           <ul>
             
-            <li><span>Email: </span> <span>harsh@ikotak.com</span></li>
+              
+                <li><a href=mailto:harsh@ikotak.com target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>harsh@ikotak.com</span>
+                </a></li>
+              
             
           </ul>
         </div>
@@ -363,15 +1078,15 @@ if (!doNotTrack) {
     
     <hr />
     <div class="container">
-      <div class="row text-left">
+      <div class="row text-start">
         <div class="col-md-4">
-          <a id="theme" href="https://ikotak.com/" target="_blank" rel="noopener">
-            <img src="/images/theme-logo_hu891b713ccd2e44f259b77b873cb764ab_10519_32x0_resize_box_3.png" alt="Toha Theme Logo">
-            iKotak
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu_b3360284c55cf72d.png" alt="Toha Theme Logo">
+            Toha
           </a>
         </div>
-        <div class="col-md-4 text-center">© 2021 All rights reserved.</div>
-        <div class="col-md-4 text-right">
+        <div class="col-md-4 text-center">© 2025 All rights reserved.</div>
+        <div class="col-md-4 text-end">
           <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
           <img
             src="/images/hugo-logo.svg"
@@ -386,24 +1101,14 @@ if (!doNotTrack) {
   </footer>
 
 
-    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="/js/popper.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="/js/navbar.js"></script>
-<script type="text/javascript" src="/js/plyr.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+    <script src="/application.91bab9af3ea6af3cefda36641d1fdc76d78775d2a99c5cbbfd892093035465cf.js" integrity="sha256-kbq5rz6mrzzv2jZkHR/cdteHddKpnFy7/YkgkwNUZc8=" defer></script>
 
 
     
-    
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-  <script src="/js/imagesloaded.pkgd.min.js"></script>
-  <script src="/js/note.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
-  
+     
 
-  </body>
+    
+    
+
+</body>
 </html>

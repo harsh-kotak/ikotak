@@ -1,0 +1,36 @@
+# section information
+section:
+  name: Accomplishments
+  id: accomplishments
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+
+# Your accomplishments
+accomplishments:
+- name: Technology Leadership Certificate
+  organization:
+    name: Cornell University
+    url: https://ecornell.cornell.edu/certificates/technology/technology-leadership/
+  courseOverview: Got the opportunity to analyze my own leadership attributes and decision-making styles as a technology leader; strengthen essential communication, motivation, and influencing skills; and ultimately prepare for future growth and success in the management of technical and project teams.
+  certificateURL: "https://ecornell.cornell.edu/"
+
+- name: Certified Kubernetes Administrator (CKA)
+  timeline: "Dec 2022 - Dec 2025"
+  organization:
+    name: Linux Foundation
+    url: https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
+  courseOverview: CKAs have the skills, knowledge, and competency to perform the responsibilities of Kubernetes administrators.
+  certificateURL: "https://training.linuxfoundation.org/certification/verify/"
+
+- name: Cisco Certified Network Professional (CCNP)
+  timeline: "June 2024 - June 2027"
+  organization:
+    name: Cisco
+    url: https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html
+  courseOverview: Tests your skills in the ever-changing landscape of enterprise network technologies. 
+  certificateURL: "https://cp.certmetrics.com/cisco/en/public/verify/credential"
+
