@@ -16,7 +16,7 @@
   </url><url>
     <loc>https://ikotak.com/notes/go/advanced/files/</loc>
   </url><url>
-    <loc>https://ikotak.com/notes/openshift/commands/</loc>
+    <loc>https://ikotak.com/notes/kubernetes/commands/</loc>
   </url><url>
     <loc>https://ikotak.com/notes/network/basics/</loc>
   </url><url>
@@ -144,9 +144,9 @@
   </url><url>
     <loc>https://ikotak.com/notes/go/</loc>
   </url><url>
-    <loc>https://ikotak.com/notes/network/</loc>
+    <loc>https://ikotak.com/notes/kubernetes/</loc>
   </url><url>
-    <loc>https://ikotak.com/notes/openshift/</loc>
+    <loc>https://ikotak.com/notes/network/</loc>
   </url><url>
     <loc>https://ikotak.com/search/</loc>
     <priority>0.1</priority>

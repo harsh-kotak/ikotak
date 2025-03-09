@@ -1,9 +1,9 @@
 ---
-title: OpenShift Notes
+title: Kubernetes Notes
 menu:
   notes:
-    name: OpenShift
+    name: Kubernetes
     identifier: notes-ocp
     weight: 40
 ---
-# OpenShift Notes
+# Kubernetes Notes
