@@ -449,7 +449,32 @@ document.documentElement.setAttribute('data-theme', theme)
   
   
     
-    <li><a class=" list-link" href="/notes/network/" title="Network">Network</a></li>
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/notes/network/"> Network</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/network/bgp/" title="BGP">BGP</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/notes/network/ospf/" title="OSPF">OSPF</a></li>
+  
+
+
+      </ul>
+    </li>
   
 
 
@@ -571,6 +596,8 @@ document.documentElement.setAttribute('data-theme', theme)
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| total: %{time_total}\n 
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| size: %{size_download}\n 
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| HTTPCode=%{http_code}\n\n&#34;</span> ; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>time <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..50<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> curl -s https://ikotak.com &gt; /dev/null; <span style="color:#66d9ef">done</span>
 </span></span></code></pre></div></div>
             </div>
         
@@ -652,11 +679,260 @@ document.documentElement.setAttribute('data-theme', theme)
     </div>
 </div>
 
+<!-- Fiber Channel -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Fiber Channel</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Troubleshooting Fiber Channel connections</span>
+</span></span><span style="display:flex;"><span>$ multipath -ll
+</span></span><span style="display:flex;"><span>mpatha <span style="color:#f92672">(</span>000219fb<span style="color:#f92672">)</span> dm-0 PURE,FlashArray
+</span></span><span style="display:flex;"><span>size<span style="color:#f92672">=</span>500G features<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0&#39;</span> hwhandler<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1 alua&#39;</span> wp<span style="color:#f92672">=</span>rw
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`</span>-+- policy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;service-time 0&#39;</span> prio<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span> status<span style="color:#f92672">=</span>active
+</span></span><span style="display:flex;"><span>  |- 14:0:0:1 sdb 8:16  active ready running
+</span></span><span style="display:flex;"><span>  |- 14:0:1:1 sdd 8:48  active ready running
+</span></span><span style="display:flex;"><span>  |- 12:0:0:1 sdf 8:80  active ready running
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">`</span>- 12:0:1:1 sdh 8:112 active ready running
+</span></span><span style="display:flex;"><span>mpathb <span style="color:#f92672">(</span>000219fc<span style="color:#f92672">)</span> dm-1 PURE,FlashArray
+</span></span><span style="display:flex;"><span>size<span style="color:#f92672">=</span>250G features<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0&#39;</span> hwhandler<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1 alua&#39;</span> wp<span style="color:#f92672">=</span>rw
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`</span>-+- policy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;service-time 0&#39;</span> prio<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span> status<span style="color:#f92672">=</span>active
+</span></span><span style="display:flex;"><span>  |- 14:0:0:2 sdc 8:32  active ready running
+</span></span><span style="display:flex;"><span>  |- 14:0:1:2 sde 8:64  active ready running
+</span></span><span style="display:flex;"><span>  |- 12:0:0:2 sdg 8:96  active ready running
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">`</span>- 12:0:1:2 sdi 8:128 active ready running 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ grep -v <span style="color:#e6db74">&#34;zZzZ&#34;</span> -H /sys/class/fc_host/host*/port_state
+</span></span><span style="display:flex;"><span>/sys/class/fc_host/host12/port_state:Linkdown
+</span></span><span style="display:flex;"><span>/sys/class/fc_host/host13/port_state:Linkdown
+</span></span><span style="display:flex;"><span>/sys/class/fc_host/host14/port_state:Online
+</span></span><span style="display:flex;"><span>/sys/class/fc_host/host15/port_state:Linkdown 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ ll /sys/class/fc_host/
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">0</span> Aug <span style="color:#ae81ff">2</span> 17:35 host12 -&gt; ../../devices/pci0000:20/0000:20:03.1/0000:21:00.0/host12/fc_host/host12
+</span></span><span style="display:flex;"><span>lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">0</span> Aug <span style="color:#ae81ff">2</span> 17:35 host13 -&gt; ../../devices/pci0000:20/0000:20:03.1/0000:21:00.1/host13/fc_host/host13
+</span></span><span style="display:flex;"><span>lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">0</span> Aug <span style="color:#ae81ff">2</span> 17:35 host14 -&gt; ../../devices/pci0000:80/0000:80:01.1/0000:81:00.0/host14/fc_host/host14
+</span></span><span style="display:flex;"><span>lrwxrwxrwx. <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">0</span> Aug <span style="color:#ae81ff">2</span> 17:35 host15 -&gt; ../../devices/pci0000:80/0000:80:01.1/0000:81:00.1/host15/fc_host/host15 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cat /sys/class/fc_host/host*/port_name
+</span></span><span style="display:flex;"><span>0x100000620b416b60
+</span></span><span style="display:flex;"><span>0x100000620b416b61
+</span></span><span style="display:flex;"><span>0x100000620b416b75
+</span></span><span style="display:flex;"><span>0x100000620b416b76
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- PCIe devices -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>PCIe devices</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Get Vendor ID and Device ID of all PCI Devices</span>
+</span></span><span style="display:flex;"><span>grep PCI_ID /sys/bus/pci/devices/*/uevent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vGPU mdev devices</span>
+</span></span><span style="display:flex;"><span>ls /sys/class/mdev_bus/*/mdev_supported_types
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Mellanox NIC -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Mellanox NIC</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Upgrade firmware on NIC</span>
+</span></span><span style="display:flex;"><span>/mlxup -u -y -i fw-ConnectX5-rel-16_25_4518-MCX516A-CCA_Ax-UEFI-14.18.19-FlexBoot-3.5.701.bin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Upgrade using mstflint utility</span>
+</span></span><span style="display:flex;"><span>mstflint -d &lt;lspci-device-id&gt; -i &lt;image-file&gt; b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Query SRIOV VFs</span>
+</span></span><span style="display:flex;"><span>yum install -y mstflint
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> adapter in <span style="color:#66d9ef">$(</span>lspci -D| grep -i mel |awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>;<span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    mstconfig -d <span style="color:#e6db74">${</span>adapter<span style="color:#e6db74">}</span> query |egrep -i <span style="color:#e6db74">&#34;sriov|vfs”
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">done
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Set mellanox adapters enable SRIOV set #vfs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">for adapter in </span><span style="color:#66d9ef">$(</span>lspci -D| grep -i mel |awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">;do
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    mstconfig -y -d </span><span style="color:#e6db74">${</span>adapter<span style="color:#e6db74">}</span><span style="color:#e6db74"> set SRIOV_EN=1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    mstconfig -y -d </span><span style="color:#e6db74">${</span>adapter<span style="color:#e6db74">}</span><span style="color:#e6db74"> set NUM_OF_VFS=64
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">done
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># eSwitch
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>$<span style="color:#e6db74"> devlink dev eswitch show pci/0000:88:00.0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">pci/0000:88:00.0: mode legacy inline-mode none encap enable
+</span></span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- Manual sosreport script -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Manual sosreport script</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>export LANG<span style="color:#f92672">=</span>C
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If this script hangs, un-comment the below two entries and note the command that the script hangs on.  Then comment out that command and re-run the script.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set -x</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set -o verbose</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[[</span> -d /tmp/sosreport <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> rm -rf /tmp/sosreport
+</span></span><span style="display:flex;"><span>mkdir /tmp/sosreport <span style="color:#f92672">&amp;&amp;</span> cd /tmp/sosreport <span style="color:#f92672">&amp;&amp;</span> mkdir -p  var/log etc/lvm etc/sysconfig network storage sos_commands/networking
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Gathering system information…”
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">hostname &amp;&gt; hostname  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /etc/redhat-release  ./etc/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">uptime &amp;&gt; uptime 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">echo -e &#34;</span>Gathering application information…”
+</span></span><span style="display:flex;"><span>chkconfig --list &amp;&gt; chkconfig
+</span></span><span style="display:flex;"><span>top -bn1 &amp;&gt; top_bn1
+</span></span><span style="display:flex;"><span>service --status-all &amp;&gt; service_status_all
+</span></span><span style="display:flex;"><span>date &amp;&gt; date
+</span></span><span style="display:flex;"><span>ps auxww &amp;&gt; ps_auxww
+</span></span><span style="display:flex;"><span>ps -elf &amp;&gt; ps_-elf
+</span></span><span style="display:flex;"><span>rpm -qa --last &amp;&gt; rpm-qa
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Running &#39;rpm -Va&#39;. This may take a moment.”
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">rpm -Va &amp;&gt; rpm-Va
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">echo -e &#34;</span>Gathering memory information…”
+</span></span><span style="display:flex;"><span>free -m &amp;&gt; free  
+</span></span><span style="display:flex;"><span>vmstat <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">10</span> &amp;&gt; vmstat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Gathering network information…”
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ifconfig &amp;&gt; ./network/ifconfig  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">netstat -s &amp;&gt;./network/netstat_-s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">netstat -agn &amp;&gt; ./network/netstat_-agn
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">netstat -neopa &amp;&gt; ./network/netstat_-neopa
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">route -n &amp;&gt; ./network/route_-n
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">for i in </span><span style="color:#66d9ef">$(</span>ls /etc/sysconfig/network-scripts/<span style="color:#f92672">{</span>ifcfg,route,rule<span style="color:#f92672">}</span>-*<span style="color:#66d9ef">)</span><span style="color:#e6db74"> ; do echo -e &#34;</span>$i<span style="color:#ae81ff">\n</span>...................<span style="color:#e6db74">&#34;; cat </span>$i<span style="color:#e6db74">;echo &#34;</span> <span style="color:#e6db74">&#34;;  done &amp;&gt; ./sos_commands/networking/ifcfg-files    
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">for i in </span><span style="color:#66d9ef">$(</span>ifconfig | grep <span style="color:#e6db74">&#34;^[a-z]&#34;</span> | cut -f <span style="color:#ae81ff">1</span> -d <span style="color:#e6db74">&#34; &#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">; do echo -e &#34;</span>$i<span style="color:#ae81ff">\n</span>...................<span style="color:#e6db74">&#34; ; ethtool </span>$i<span style="color:#e6db74">; ethtool -k </span>$i<span style="color:#e6db74">; ethtool -S </span>$i<span style="color:#e6db74">; ethtool -i </span>$i<span style="color:#e6db74">;echo -e &#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34; ; done &amp;&gt; ./sos_commands/networking/ethtool.out
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp /etc/sysconfig/network ./sos_commands/networking/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp /etc/sysconfig/network-scripts/ifcfg-* ./sos_commands/networking/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp /etc/sysconfig/network-scripts/route-* ./sos_commands/networking/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cat /proc/net/bonding/bond* &amp;&gt; ./sos_commands/networking/proc-net-bonding-bond 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">iptables --list --line-numbers &amp;&gt; ./sos_commands/networking/iptables_--list_--line-numbers
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ip route show table all &amp;&gt; ./sos_commands/networking/ip_route_show_table_all
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ip link &amp;&gt; ./sos_commands/networking/ip_link
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">echo -e &#34;</span>Gathering Storage/Filesystem information…”
+</span></span><span style="display:flex;"><span>df -l &amp;&gt; df
+</span></span><span style="display:flex;"><span>fdisk -l &amp;&gt; fdisk
+</span></span><span style="display:flex;"><span>parted -l &amp;&gt; parted
+</span></span><span style="display:flex;"><span>cp -a /etc/fstab  ./etc/ 2&gt;&gt; error_log
+</span></span><span style="display:flex;"><span>cp -a /etc/lvm/lvm.conf ./etc/lvm/ 2&gt;&gt; error_log
+</span></span><span style="display:flex;"><span>cp -a /etc/lvm/backup/ ./etc/lvm/ 2&gt;&gt; error_log
+</span></span><span style="display:flex;"><span>cp -a /etc/lvm/archive/ ./etc/lvm/ 2&gt;&gt; error_log
+</span></span><span style="display:flex;"><span>cp -a /etc/multipath.conf ./etc/ 2&gt;&gt; error_log
+</span></span><span style="display:flex;"><span>cat /proc/mounts &amp;&gt; mount  
+</span></span><span style="display:flex;"><span>iostat -tkx <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">10</span> &amp;&gt; iostat_-tkx_1_10
+</span></span><span style="display:flex;"><span>parted -l &amp;&gt; storage/parted_-l
+</span></span><span style="display:flex;"><span>vgdisplay -v &amp;&gt; storage/vgdisplay
+</span></span><span style="display:flex;"><span>lvdisplay &amp;&gt; storage/lvdisplay
+</span></span><span style="display:flex;"><span>pvdisplay &amp;&gt; storage/pvdisplay
+</span></span><span style="display:flex;"><span>pvs -a -v &amp;&gt; storage/pvs
+</span></span><span style="display:flex;"><span>vgs -v &amp;&gt; storage/vgs
+</span></span><span style="display:flex;"><span>lvs -o +devices &amp;&gt; storage/lvs
+</span></span><span style="display:flex;"><span>multipath -v4 -ll &amp;&gt; storage/multipath_ll
+</span></span><span style="display:flex;"><span>pvscan -vvvv &amp;&gt; storage/pvscan
+</span></span><span style="display:flex;"><span>vgscan -vvvv &amp;&gt; storage/vgscan
+</span></span><span style="display:flex;"><span>lvscan -vvvv &amp;&gt; storage/lvscan
+</span></span><span style="display:flex;"><span>lsblk &amp;&gt; storage/lsblk
+</span></span><span style="display:flex;"><span>lsblk -t &amp;&gt; storage/lsblk_t
+</span></span><span style="display:flex;"><span>dmsetup info -C &amp;&gt; storage/dmsetup_info_c
+</span></span><span style="display:flex;"><span>dmsetup status &amp;&gt;  storage/dmsetup_status 
+</span></span><span style="display:flex;"><span>dmsetup table &amp;&gt;  storage/dmsetup_table
+</span></span><span style="display:flex;"><span>ls -lahR /dev &amp;&gt; storage/dev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Gathering kernel information…”
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /etc/security/limits.conf ./etc/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /etc/sysctl.conf ./etc/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ulimit -a &amp;&gt; ulimit
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cat /proc/slabinfo &amp;&gt; slabinfo
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cat /proc/interrupts &amp;&gt; interrupts 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cat /proc/iomem &amp;&gt; iomem
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cat /proc/ioports &amp;&gt; ioports
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">slabtop -o &amp;&gt; slabtop_-o
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">uname -a &amp;&gt; uname
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sysctl -a &amp;&gt; sysctl_-a
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">lsmod &amp;&gt; lsmod
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /etc/modprobe.conf ./etc/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a  /etc/sysconfig/* ./etc/sysconfig/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">for MOD in `lsmod | grep -v &#34;</span>Used by<span style="color:#e6db74">&#34;| awk &#39;{ print </span>$1<span style="color:#e6db74"> }&#39;`; do modinfo  </span>$MOD<span style="color:#e6db74"> 2&gt;&amp;1 &gt;&gt; modinfo; done;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ipcs -a &amp;&gt; ipcs_-a
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ipcs -s | awk &#39;/^0x/ {print </span>$2<span style="color:#e6db74">}&#39; | while read semid; do ipcs -s -i </span>$semid<span style="color:#e6db74">; done &amp;&gt; ipcs_-s_verbose
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sar -A &amp;&gt; sar_-A
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /var/log/dmesg dmesg 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dmesg &amp;&gt; dmesg_now
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">echo -e &#34;</span>Gathering hardware information…”
+</span></span><span style="display:flex;"><span>dmidecode &amp;&gt; dmidecode
+</span></span><span style="display:flex;"><span>lspci -vvv &amp;&gt; lspci_-vvv
+</span></span><span style="display:flex;"><span>lspci &amp;&gt; lspci
+</span></span><span style="display:flex;"><span>cat /proc/meminfo &amp;&gt; meminfo  
+</span></span><span style="display:flex;"><span>cat /proc/cpuinfo &amp;&gt; cpuinfo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Gathering kump information…”
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /etc/kdump.conf ./etc/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ls -laR /var/crash &amp;&gt; ls-lar-var-crash
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ls -1 /var/crash | while read n; do mkdir -p var/crash/</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">; cp -a /var/crash/</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">/vmcore-dmesg* var/crash/</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">/ 2&gt;&gt; error_log; done
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">echo -e &#34;</span>Gathering container related information…”
+</span></span><span style="display:flex;"><span>mkdir container
+</span></span><span style="display:flex;"><span>rpm -q podman <span style="color:#f92672">||</span> alias podman<span style="color:#f92672">=</span>“docker”
+</span></span><span style="display:flex;"><span>podman ps &amp;&gt; container/ps
+</span></span><span style="display:flex;"><span>podman image list &amp;&gt; container/image_list
+</span></span><span style="display:flex;"><span>podman ps | awk <span style="color:#e6db74">&#39;$1!=&#34;CONTAINER&#34; {print $1}&#39;</span> | <span style="color:#66d9ef">while</span> read id; <span style="color:#66d9ef">do</span> podman inspect $id &amp;&gt; container/inspect_<span style="color:#e6db74">${</span>id<span style="color:#e6db74">}</span>; <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Gathering logs…”
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /var/log/{containers*,message*,secure*,boot*,cron*,yum*,Xorg*,sa,rhsm,audit,dmesg} ./var/log/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cp -a /etc/*syslog.conf ./etc/ 2&gt;&gt; error_log
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">echo -e &#34;</span>Compressing files…”
+</span></span><span style="display:flex;"><span>tar -cjf /tmp/sosreport.tar.bz2 ./
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Script complete.&#34;</span>
+</span></span></code></pre></div></div>
+            </div>
+        
+    </div>
+</div>
+
 
         
       
         
-          <!-- A Sample Program -->
+          <!-- Object Oriented Programming -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Object Oriented Programming</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><p>The four pillars for OOP are Abstraction, Encapsulation, Inheritance, Polymorphism.</p>
+<p>Abstraction : Abstraction is the process of showing only essential/necessary features of an entity/object to the outside world and hide the other irrelevant information. For example to open your TV we only have a power button, It is not required to understand how infra-red waves are getting generated in TV remote control.</p>
+<p>Encapsulation : Encapsulation means wrapping up data and member function (Method) together into a single unit i.e. class. Encapsulation automatically achieve the concept of data hiding providing security to data by making the variable as private and expose the property to access the private data which would be public.</p>
+<p>Inheritance : The ability of creating a new class from an existing class. Inheritance is when an object acquires the property of another object. Inheritance allows a class (subclass) to acquire the properties and behavior of another class (super-class). It helps to reuse, customize and enhance the existing code. So it helps to write a code accurately and reduce the development time.</p>
+<p>Polymorphism: Polymorphism is derived from 2 Greek words: poly and morphs. The word &ldquo;poly&rdquo; means many and &ldquo;morphs&rdquo; means forms. So polymorphism means &ldquo;many forms&rdquo;. A subclass can define its own unique behavior and still share the same functionalities or behavior of its parent/base class. A subclass can have their own behavior and share some of its behavior from its parent class not the other way around. A parent class cannot have the behavior of its subclass.</p>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+<!-- A Sample Program -->
 <div class="note-card ">
     <div class="item">
         <h5 class="note-title"><span>Hello World</span></h5>
@@ -1051,13 +1327,44 @@ ip as-path access-list  filter</p>
     </div>
 </div>
 
-<!-- OSPF Overview -->
+<!-- Multicast -->
+<div class="note-card ">
+    <div class="item">
+        <h5 class="note-title"><span>Multicast</span></h5>
+        
+            <div class="card">
+                <div class="card-body"><p>PIM dense mode (PIM-DM) uses a push model to flood multicast traffic to every corner of the network. This push model is a brute-force method of delivering data to the receivers. This method would be efficient in certain deployments in which there are active receivers on every subnet in the network. PIM-DM initially floods multicast traffic throughout the network. Routers that have no downstream neighbors prune the unwanted traffic. This process repeats every 3 minutes.</p>
+<p>PIM Sparse Mode (PIM-SM) uses a pull model to deliver multicast traffic. Only network segments with active receivers that have explicitly requested the data receive the traffic. PIM-SM distributes information about active sources by forwarding data packets on the shared tree. Because PIM-SM uses shared trees (at least initially), it requires the use of an RP. The RP must be administratively configured in the network.</p>
+<p>A rendezvous point (RP) is required only in networks running Protocol Independent Multicast sparse mode (PIM-SM). By default, the RP is needed only to start new sessions with sources and receivers.
+The concept of joining the rendezvous point (RP) is called the RPT (Root Path Tree) or shared distribution tree. The RP is the root of our tree which decides where to forward multicast traffic to. Each multicast group might have different sources and receivers so we might have different RPTs in our network.</p>
+<p>PIM-DM supports only source trees – that is, (S,G) entries–and cannot be used to build a shared distribution tree.</p>
+<p>IGMP is used to dynamically register individual hosts in a multicast group on a particular LAN. Enabling PIM on an interface also enables IGMP. IGMP provides a means to automatically control and limit the flow of multicast traffic throughout your network with the use of special multicast queriers and hosts.</p>
+<p>A querier is a network device, such as a router, that sends query messages to discover which network devices are members of a given multicast group.</p>
+<p>A host is a receiver, including routers, that sends report messages (in response to query messages) to inform the querier of a host membership. Hosts use IGMP messages to join and leave multicast groups.</p>
+<p>Hosts identify group memberships by sending IGMP messages to their local multicast device. Under IGMP, devices listen to IGMP messages and periodically send out queries to discover which groups are active or inactive on a particular subnet.</p>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+        
+      
+        
+          <!-- OSPF Overview -->
 <div class="note-card ">
     <div class="item">
         <h5 class="note-title"><span>OSPF Overview</span></h5>
         
             <div class="card">
-                <div class="card-body"><p>OSPF router ID selection:</p>
+                <div class="card-body"><p>A classless routing protocol.<br>
+Supports VLSM, CIDR, manual route summarization, equal cost load balancing.<br>
+Incremental updates are supported.<br>
+Uses only one parameter as the metric – the interface cost.<br>
+The administrative distance of OSPF routes is, by default, 110.<br>
+Uses multicast addresses 224.0.0.5 and 224.0.0.6 for routing updates.</p>
+<p>OSPF router ID selection:</p>
 <p>OSPF uses the following criteria to select the router ID:</p>
 <ol>
 <li>Manual configuration of the router ID (via the “router-id x.x.x.x” command under OSPF router configuration mode).</li>
@@ -1173,32 +1480,7 @@ O E2 - static cost. cost does not change</p>
     </div>
 </div>
 
-<!-- Multicast -->
-<div class="note-card ">
-    <div class="item">
-        <h5 class="note-title"><span>Multicast</span></h5>
-        
-            <div class="card">
-                <div class="card-body"><p>PIM dense mode (PIM-DM) uses a push model to flood multicast traffic to every corner of the network. This push model is a brute-force method of delivering data to the receivers. This method would be efficient in certain deployments in which there are active receivers on every subnet in the network. PIM-DM initially floods multicast traffic throughout the network. Routers that have no downstream neighbors prune the unwanted traffic. This process repeats every 3 minutes.</p>
-<p>PIM Sparse Mode (PIM-SM) uses a pull model to deliver multicast traffic. Only network segments with active receivers that have explicitly requested the data receive the traffic. PIM-SM distributes information about active sources by forwarding data packets on the shared tree. Because PIM-SM uses shared trees (at least initially), it requires the use of an RP. The RP must be administratively configured in the network.</p>
-<p>A rendezvous point (RP) is required only in networks running Protocol Independent Multicast sparse mode (PIM-SM). By default, the RP is needed only to start new sessions with sources and receivers.
-The concept of joining the rendezvous point (RP) is called the RPT (Root Path Tree) or shared distribution tree. The RP is the root of our tree which decides where to forward multicast traffic to. Each multicast group might have different sources and receivers so we might have different RPTs in our network.</p>
-<p>PIM-DM supports only source trees – that is, (S,G) entries–and cannot be used to build a shared distribution tree.</p>
-<p>IGMP is used to dynamically register individual hosts in a multicast group on a particular LAN. Enabling PIM on an interface also enables IGMP. IGMP provides a means to automatically control and limit the flow of multicast traffic throughout your network with the use of special multicast queriers and hosts.</p>
-<p>A querier is a network device, such as a router, that sends query messages to discover which network devices are members of a given multicast group.</p>
-<p>A host is a receiver, including routers, that sends report messages (in response to query messages) to inform the querier of a host membership. Hosts use IGMP messages to join and leave multicast groups.</p>
-<p>Hosts identify group memberships by sending IGMP messages to their local multicast device. Under IGMP, devices listen to IGMP messages and periodically send out queries to discover which groups are active or inactive on a particular subnet.</p>
-</div>
-            </div>
-        
-    </div>
-</div>
 
-
-        
-      
-        
-        
         
       
         
@@ -1226,10 +1508,13 @@ The concept of joining the rendezvous point (RP) is called the RPT (Root Path Tr
         <a href="/notes/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
       </li>
       <li class="page-item">
+        <a href="/notes/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
         <a href="/notes/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/notes/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/notes/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
     </div>

@@ -18,7 +18,7 @@ company:
 resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a passionate engineer with 8+ years of experience in the Telecom and Internet Service Provider industry. I have a diverse background in the fields of datacenter networking, compute, storage, virtualization and containerization technologies. I pride myself in being current with industry trends and new methodologies to ensure my work is optimal. I approach my day with a positive attitude, perseverance and professionalism, all while being able to remain calm when faced with challenges.'
+summary: 'I am a passionate engineer with 8+ years of experience in the Telecom industry. I have a diverse background in the fields of datacenter networking, compute, storage, virtualization and containerization technologies. I pride myself in being current with industry trends and new methodologies to ensure my work is optimal. I approach my day with a positive attitude, perseverance and professionalism, all while being able to remain calm when faced with challenges.'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -55,10 +55,10 @@ softSkills:
   percentage: 90
   color: yellow
 - name: Problem Solving
-  percentage: 85
+  percentage: 90
   color: orange
 - name: Leadership
-  percentage: 80
+  percentage: 85
   color: blue
 - name: Communication
   percentage: 85

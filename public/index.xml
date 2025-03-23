@@ -158,6 +158,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;| total: %{time_total}\n 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;| size: %{size_download}\n 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;| HTTPCode=%{http_code}\n\n&amp;#34;&lt;/span&gt; ; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;time &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i in &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;1..50&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; curl -s https://ikotak.com &amp;gt; /dev/null; &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
             &lt;/div&gt;
         
@@ -237,6 +239,238 @@
             &lt;/div&gt;
         
     &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Fiber Channel --&gt;
+&lt;div class=&#34;note-card &#34;&gt;
+    &lt;div class=&#34;item&#34;&gt;
+        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;Fiber Channel&lt;/span&gt;&lt;/h5&gt;
+        
+            &lt;div class=&#34;card&#34;&gt;
+                &lt;div class=&#34;card-body&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Troubleshooting Fiber Channel connections&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ multipath -ll
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mpatha &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;000219fb&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; dm-0 PURE,FlashArray
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;500G features&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; hwhandler&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;1 alua&amp;#39;&lt;/span&gt; wp&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;rw
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;-+- policy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;service-time 0&amp;#39;&lt;/span&gt; prio&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt; status&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;active
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |- 14:0:0:1 sdb 8:16  active ready running
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |- 14:0:1:1 sdd 8:48  active ready running
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |- 12:0:0:1 sdf 8:80  active ready running
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;- 12:0:1:1 sdh 8:112 active ready running
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mpathb &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;000219fc&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; dm-1 PURE,FlashArray
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;250G features&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; hwhandler&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;1 alua&amp;#39;&lt;/span&gt; wp&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;rw
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;-+- policy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;service-time 0&amp;#39;&lt;/span&gt; prio&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt; status&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;active
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |- 14:0:0:2 sdc 8:32  active ready running
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |- 14:0:1:2 sde 8:64  active ready running
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |- 12:0:0:2 sdg 8:96  active ready running
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;- 12:0:1:2 sdi 8:128 active ready running 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grep -v &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;zZzZ&amp;#34;&lt;/span&gt; -H /sys/class/fc_host/host*/port_state
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/sys/class/fc_host/host12/port_state:Linkdown
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/sys/class/fc_host/host13/port_state:Linkdown
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/sys/class/fc_host/host14/port_state:Online
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/sys/class/fc_host/host15/port_state:Linkdown 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ll /sys/class/fc_host/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lrwxrwxrwx. &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Aug &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 17:35 host12 -&amp;gt; ../../devices/pci0000:20/0000:20:03.1/0000:21:00.0/host12/fc_host/host12
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lrwxrwxrwx. &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Aug &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 17:35 host13 -&amp;gt; ../../devices/pci0000:20/0000:20:03.1/0000:21:00.1/host13/fc_host/host13
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lrwxrwxrwx. &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Aug &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 17:35 host14 -&amp;gt; ../../devices/pci0000:80/0000:80:01.1/0000:81:00.0/host14/fc_host/host14
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lrwxrwxrwx. &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Aug &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 17:35 host15 -&amp;gt; ../../devices/pci0000:80/0000:80:01.1/0000:81:00.1/host15/fc_host/host15 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /sys/class/fc_host/host*/port_name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0x100000620b416b60
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0x100000620b416b61
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0x100000620b416b75
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0x100000620b416b76
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- PCIe devices --&gt;
+&lt;div class=&#34;note-card &#34;&gt;
+    &lt;div class=&#34;item&#34;&gt;
+        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;PCIe devices&lt;/span&gt;&lt;/h5&gt;
+        
+            &lt;div class=&#34;card&#34;&gt;
+                &lt;div class=&#34;card-body&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Get Vendor ID and Device ID of all PCI Devices&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep PCI_ID /sys/bus/pci/devices/*/uevent
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# vGPU mdev devices&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls /sys/class/mdev_bus/*/mdev_supported_types
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Mellanox NIC --&gt;
+&lt;div class=&#34;note-card &#34;&gt;
+    &lt;div class=&#34;item&#34;&gt;
+        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;Mellanox NIC&lt;/span&gt;&lt;/h5&gt;
+        
+            &lt;div class=&#34;card&#34;&gt;
+                &lt;div class=&#34;card-body&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Upgrade firmware on NIC&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/mlxup -u -y -i fw-ConnectX5-rel-16_25_4518-MCX516A-CCA_Ax-UEFI-14.18.19-FlexBoot-3.5.701.bin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Upgrade using mstflint utility&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mstflint -d &amp;lt;lspci-device-id&amp;gt; -i &amp;lt;image-file&amp;gt; b
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Query SRIOV VFs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum install -y mstflint
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; adapter in &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;lspci -D| grep -i mel |awk &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;;&lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    mstconfig -d &lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;adapter&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt; query |egrep -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sriov|vfs”
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;done
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;# Set mellanox adapters enable SRIOV set #vfs
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;for adapter in &lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;lspci -D| grep -i mel |awk &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;;do
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    mstconfig -y -d &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;adapter&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; set SRIOV_EN=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    mstconfig -y -d &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;adapter&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; set NUM_OF_VFS=64
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;done
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;# eSwitch
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;$&lt;span style=&#34;color:#e6db74&#34;&gt; devlink dev eswitch show pci/0000:88:00.0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;pci/0000:88:00.0: mode legacy inline-mode none encap enable
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Manual sosreport script --&gt;
+&lt;div class=&#34;note-card &#34;&gt;
+    &lt;div class=&#34;item&#34;&gt;
+        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;Manual sosreport script&lt;/span&gt;&lt;/h5&gt;
+        
+            &lt;div class=&#34;card&#34;&gt;
+                &lt;div class=&#34;card-body&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;export LANG&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;C
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# If this script hangs, un-comment the below two entries and note the command that the script hangs on.  Then comment out that command and re-run the script.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# set -x&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# set -o verbose&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; -d /tmp/sosreport &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -rf /tmp/sosreport
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir /tmp/sosreport &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; cd /tmp/sosreport &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mkdir -p  var/log etc/lvm etc/sysconfig network storage sos_commands/networking
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Gathering system information…”
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;hostname &amp;amp;&amp;gt; hostname  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /etc/redhat-release  ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;uptime &amp;amp;&amp;gt; uptime 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;echo -e &amp;#34;&lt;/span&gt;Gathering application information…”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chkconfig --list &amp;amp;&amp;gt; chkconfig
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;top -bn1 &amp;amp;&amp;gt; top_bn1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service --status-all &amp;amp;&amp;gt; service_status_all
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date &amp;amp;&amp;gt; date
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps auxww &amp;amp;&amp;gt; ps_auxww
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps -elf &amp;amp;&amp;gt; ps_-elf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rpm -qa --last &amp;amp;&amp;gt; rpm-qa
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Running &amp;#39;rpm -Va&amp;#39;. This may take a moment.”
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;rpm -Va &amp;amp;&amp;gt; rpm-Va
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;echo -e &amp;#34;&lt;/span&gt;Gathering memory information…”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;free -m &amp;amp;&amp;gt; free  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vmstat &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; &amp;amp;&amp;gt; vmstat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Gathering network information…”
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ifconfig &amp;amp;&amp;gt; ./network/ifconfig  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;netstat -s &amp;amp;&amp;gt;./network/netstat_-s
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;netstat -agn &amp;amp;&amp;gt; ./network/netstat_-agn
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;netstat -neopa &amp;amp;&amp;gt; ./network/netstat_-neopa
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;route -n &amp;amp;&amp;gt; ./network/route_-n
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;for i in &lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;ls /etc/sysconfig/network-scripts/&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;ifcfg,route,rule&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;-*&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; ; do echo -e &amp;#34;&lt;/span&gt;$i&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;...................&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;; cat &lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;;echo &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;;  done &amp;amp;&amp;gt; ./sos_commands/networking/ifcfg-files    
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;for i in &lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;ifconfig | grep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^[a-z]&amp;#34;&lt;/span&gt; | cut -f &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;; do echo -e &amp;#34;&lt;/span&gt;$i&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;...................&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; ; ethtool &lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;; ethtool -k &lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;; ethtool -S &lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;; ethtool -i &lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;;echo -e &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; ; done &amp;amp;&amp;gt; ./sos_commands/networking/ethtool.out
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp /etc/sysconfig/network ./sos_commands/networking/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp /etc/sysconfig/network-scripts/ifcfg-* ./sos_commands/networking/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp /etc/sysconfig/network-scripts/route-* ./sos_commands/networking/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cat /proc/net/bonding/bond* &amp;amp;&amp;gt; ./sos_commands/networking/proc-net-bonding-bond 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;iptables --list --line-numbers &amp;amp;&amp;gt; ./sos_commands/networking/iptables_--list_--line-numbers
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ip route show table all &amp;amp;&amp;gt; ./sos_commands/networking/ip_route_show_table_all
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ip link &amp;amp;&amp;gt; ./sos_commands/networking/ip_link
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;echo -e &amp;#34;&lt;/span&gt;Gathering Storage/Filesystem information…”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df -l &amp;amp;&amp;gt; df
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fdisk -l &amp;amp;&amp;gt; fdisk
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parted -l &amp;amp;&amp;gt; parted
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -a /etc/fstab  ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -a /etc/lvm/lvm.conf ./etc/lvm/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -a /etc/lvm/backup/ ./etc/lvm/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -a /etc/lvm/archive/ ./etc/lvm/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -a /etc/multipath.conf ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /proc/mounts &amp;amp;&amp;gt; mount  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iostat -tkx &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; &amp;amp;&amp;gt; iostat_-tkx_1_10
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parted -l &amp;amp;&amp;gt; storage/parted_-l
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgdisplay -v &amp;amp;&amp;gt; storage/vgdisplay
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvdisplay &amp;amp;&amp;gt; storage/lvdisplay
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvdisplay &amp;amp;&amp;gt; storage/pvdisplay
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvs -a -v &amp;amp;&amp;gt; storage/pvs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgs -v &amp;amp;&amp;gt; storage/vgs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvs -o +devices &amp;amp;&amp;gt; storage/lvs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;multipath -v4 -ll &amp;amp;&amp;gt; storage/multipath_ll
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvscan -vvvv &amp;amp;&amp;gt; storage/pvscan
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgscan -vvvv &amp;amp;&amp;gt; storage/vgscan
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvscan -vvvv &amp;amp;&amp;gt; storage/lvscan
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsblk &amp;amp;&amp;gt; storage/lsblk
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsblk -t &amp;amp;&amp;gt; storage/lsblk_t
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dmsetup info -C &amp;amp;&amp;gt; storage/dmsetup_info_c
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dmsetup status &amp;amp;&amp;gt;  storage/dmsetup_status 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dmsetup table &amp;amp;&amp;gt;  storage/dmsetup_table
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls -lahR /dev &amp;amp;&amp;gt; storage/dev
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Gathering kernel information…”
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /etc/security/limits.conf ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /etc/sysctl.conf ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ulimit -a &amp;amp;&amp;gt; ulimit
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cat /proc/slabinfo &amp;amp;&amp;gt; slabinfo
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cat /proc/interrupts &amp;amp;&amp;gt; interrupts 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cat /proc/iomem &amp;amp;&amp;gt; iomem
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cat /proc/ioports &amp;amp;&amp;gt; ioports
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;slabtop -o &amp;amp;&amp;gt; slabtop_-o
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;uname -a &amp;amp;&amp;gt; uname
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;sysctl -a &amp;amp;&amp;gt; sysctl_-a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;lsmod &amp;amp;&amp;gt; lsmod
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /etc/modprobe.conf ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a  /etc/sysconfig/* ./etc/sysconfig/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;for MOD in `lsmod | grep -v &amp;#34;&lt;/span&gt;Used by&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;| awk &amp;#39;{ print &lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt; }&amp;#39;`; do modinfo  &lt;/span&gt;$MOD&lt;span style=&#34;color:#e6db74&#34;&gt; 2&amp;gt;&amp;amp;1 &amp;gt;&amp;gt; modinfo; done;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ipcs -a &amp;amp;&amp;gt; ipcs_-a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ipcs -s | awk &amp;#39;/^0x/ {print &lt;/span&gt;$2&lt;span style=&#34;color:#e6db74&#34;&gt;}&amp;#39; | while read semid; do ipcs -s -i &lt;/span&gt;$semid&lt;span style=&#34;color:#e6db74&#34;&gt;; done &amp;amp;&amp;gt; ipcs_-s_verbose
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;sar -A &amp;amp;&amp;gt; sar_-A
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /var/log/dmesg dmesg 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;dmesg &amp;amp;&amp;gt; dmesg_now
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;echo -e &amp;#34;&lt;/span&gt;Gathering hardware information…”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dmidecode &amp;amp;&amp;gt; dmidecode
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lspci -vvv &amp;amp;&amp;gt; lspci_-vvv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lspci &amp;amp;&amp;gt; lspci
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /proc/meminfo &amp;amp;&amp;gt; meminfo  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /proc/cpuinfo &amp;amp;&amp;gt; cpuinfo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Gathering kump information…”
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /etc/kdump.conf ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ls -laR /var/crash &amp;amp;&amp;gt; ls-lar-var-crash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ls -1 /var/crash | while read n; do mkdir -p var/crash/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;n&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;; cp -a /var/crash/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;n&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/vmcore-dmesg* var/crash/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;n&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/ 2&amp;gt;&amp;gt; error_log; done
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;echo -e &amp;#34;&lt;/span&gt;Gathering container related information…”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir container
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rpm -q podman &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; alias podman&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;“docker”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;podman ps &amp;amp;&amp;gt; container/ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;podman image list &amp;amp;&amp;gt; container/image_list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;podman ps | awk &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$1!=&amp;#34;CONTAINER&amp;#34; {print $1}&amp;#39;&lt;/span&gt; | &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; read id; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; podman inspect $id &amp;amp;&amp;gt; container/inspect_&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;id&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Gathering logs…”
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /var/log/{containers*,message*,secure*,boot*,cron*,yum*,Xorg*,sa,rhsm,audit,dmesg} ./var/log/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;cp -a /etc/*syslog.conf ./etc/ 2&amp;gt;&amp;gt; error_log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;echo -e &amp;#34;&lt;/span&gt;Compressing files…”
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar -cjf /tmp/sosreport.tar.bz2 ./
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Script complete.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        
+    &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
     
@@ -246,66 +480,14 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikotak.com/notes/go/basic/introduction/</guid>
-      <description>&lt;!-- A Sample Program --&gt;
+      <description>&lt;!-- Object Oriented Programming --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
-        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;Hello World&lt;/span&gt;&lt;/h5&gt;
+        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;Object Oriented Programming&lt;/span&gt;&lt;/h5&gt;
         
             &lt;div class=&#34;card&#34;&gt;
-                &lt;div class=&#34;card-body&#34;&gt;&lt;p&gt;A sample go program is show here.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greetMe&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;world&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greetMe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;!&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run the program as below:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ go run hello.go
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Declaring Variables --&gt;
-&lt;div class=&#34;note-card &#34;&gt;
-    &lt;div class=&#34;item&#34;&gt;
-        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;Variables&lt;/span&gt;&lt;/h5&gt;
-        
-            &lt;div class=&#34;card&#34;&gt;
-                &lt;div class=&#34;card-body&#34;&gt;&lt;p&gt;&lt;strong&gt;Normal Declaration:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;msg&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;msg&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        
-            &lt;div class=&#34;card&#34;&gt;
-                &lt;div class=&#34;card-body&#34;&gt;&lt;p&gt;&lt;strong&gt;Shortcut:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;msg&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Declaring Constants --&gt;
-&lt;div class=&#34;note-card &#34;&gt;
-    &lt;div class=&#34;item&#34;&gt;
-        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;Constants&lt;/span&gt;&lt;/h5&gt;
-        
-            &lt;div class=&#34;card&#34;&gt;
-                &lt;div class=&#34;card-body&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Phi&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;1.618&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        
-    &lt;/div&gt;
-&lt;/div&gt;</description>
+                &lt;div class=&#34;card-body&#34;&gt;&lt;p&gt;The four pillars for OOP are Abstraction, Encapsulation, Inheritance, Polymorphism.&lt;/p&gt;
+&lt;p&gt;Abstraction : Abstraction is the process of showing only essential/necessary features of an entity/object to the outside world and hide the other irrelevant information. For example to open your TV we only have a power button, It is not required to understand how infra-red waves are getting generated in TV remote control.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -517,11 +699,11 @@
     </item>
     
     <item>
-      <title>Networking Concepts</title>
-      <link>https://ikotak.com/notes/network/basics/</link>
+      <title>BGP Concepts</title>
+      <link>https://ikotak.com/notes/network/bgp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikotak.com/notes/network/basics/</guid>
+      <guid>https://ikotak.com/notes/network/bgp/</guid>
       <description>&lt;!-- BGP Summary--&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -541,6 +723,34 @@ Neighbor States: Idle -&amp;gt; Active -&amp;gt; Connect -&amp;gt; Open Sent -&a
 4 – OpenSent: the BGP speaker is waiting to receive an OPEN message from the remote BGP speaker&lt;br&gt;
 5 – OpenConfirm: Once the BGP speaker receives the OPEN message and no error is detected, the BGP speaker sends a KEEPALIVE message to the remote BGP speaker.&lt;br&gt;
 6 – Established: All of the neighbor negotiations are complete. You will see a number, which tells us the number of prefixes the router has received from a neighbor or peer group.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OSPF Concepts</title>
+      <link>https://ikotak.com/notes/network/ospf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikotak.com/notes/network/ospf/</guid>
+      <description>&lt;!-- OSPF Overview --&gt;
+&lt;div class=&#34;note-card &#34;&gt;
+    &lt;div class=&#34;item&#34;&gt;
+        &lt;h5 class=&#34;note-title&#34;&gt;&lt;span&gt;OSPF Overview&lt;/span&gt;&lt;/h5&gt;
+        
+            &lt;div class=&#34;card&#34;&gt;
+                &lt;div class=&#34;card-body&#34;&gt;&lt;p&gt;A classless routing protocol.&lt;br&gt;
+Supports VLSM, CIDR, manual route summarization, equal cost load balancing.&lt;br&gt;
+Incremental updates are supported.&lt;br&gt;
+Uses only one parameter as the metric – the interface cost.&lt;br&gt;
+The administrative distance of OSPF routes is, by default, 110.&lt;br&gt;
+Uses multicast addresses 224.0.0.5 and 224.0.0.6 for routing updates.&lt;/p&gt;
+&lt;p&gt;OSPF router ID selection:&lt;/p&gt;
+&lt;p&gt;OSPF uses the following criteria to select the router ID:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Manual configuration of the router ID (via the “router-id x.x.x.x” command under OSPF router configuration mode).&lt;/li&gt;
+&lt;li&gt;Highest IP address on a loopback interface.&lt;/li&gt;
+&lt;li&gt;Highest IP address on a non-loopback and active (no shutdown) interface.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;OSPF forms neighbor relationship with other OSPF routers on the same segment by exchanging hello packets. The hello packets contain various parameters. Some of them should match between neighboring routers. These include:&lt;/p&gt;</description>
     </item>
     
     

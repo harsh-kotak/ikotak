@@ -43,7 +43,7 @@ skills:
 
 - name: Tooling
   logo: "/images/sections/skills/tooling.png"
-  summary: "Ansible, Terraform, Git, ArgoCD, Artifactory, RH Satellite, Morpheus, Ixia, TRex, UCS Manager"
+  summary: "Ansible, Terraform, Git, ArgoCD, Vault, Artifactory, Prometheus, Grafana, Morpheus, Ixia"
 
 - name: Linux
   logo: "/images/sections/skills/linux.png"
