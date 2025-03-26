@@ -123,12 +123,15 @@
     <priority>0.1</priority>
   </url><url>
     <loc>https://ikotak.com/</loc>
-    <lastmod>2020-12-08T06:15:40+06:00</lastmod>
+    <lastmod>2025-03-08T06:15:40+06:00</lastmod>
   </url><url>
-    <loc>https://ikotak.com/posts/openvswitch/</loc>
-    <lastmod>2020-12-08T06:15:40+06:00</lastmod>
+    <loc>https://ikotak.com/posts/kubernetes/</loc>
+    <lastmod>2025-03-08T06:15:40+06:00</lastmod>
   </url><url>
     <loc>https://ikotak.com/posts/</loc>
+    <lastmod>2025-03-08T06:15:40+06:00</lastmod>
+  </url><url>
+    <loc>https://ikotak.com/posts/openvswitch/</loc>
     <lastmod>2020-12-08T06:15:40+06:00</lastmod>
   </url><url>
     <loc>https://ikotak.com/posts/introduction/</loc>
