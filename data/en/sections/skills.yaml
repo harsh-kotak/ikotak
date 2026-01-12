@@ -38,7 +38,7 @@ skills:
 
 - name: Container Orchestration
   logo: "/images/sections/skills/kubernetes.png"
-  summary: "Docker, Kubernetes(OpenShift, Rancher), Helm, Portworx"
+  summary: "Docker, Kubernetes (OpenShift, Rancher), Helm, Portworx"
   url: "https://kubernetes.io/"
 
 - name: Tooling

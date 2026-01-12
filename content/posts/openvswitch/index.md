@@ -112,3 +112,17 @@ The following are useful commands to use:
 
 <kbd>ovs-appctl fdb/stats-clear &lt;bridgegt;</kbd> : Clears bridge MAC address learning table statistics, or all statistics if no bridge is given.
 
+---------------------------------------
+#### Bonus: Multicast on OpenvSwitch
+Use these commands to enable IGMP-based multicast snooping on br-int and inspect the multicast forwarding table, helping diagnose multicast flooding or missing group subscriptions.
+
+<kbd>ovs-vsctl set Bridge br-int mcast_snooping_enable=true
+
+<kbd>ovs-vsctl set Bridge br-int other_config:mcast-snooping-disable-flood-unregistered=true
+
+<kbd>ovs-vsctl get Bridge br-int other_config
+
+<kbd>ovs-appctl mdb/show br-int
+
+<kbd>ovs−vsctl clear bridge ovs-br other_config
+

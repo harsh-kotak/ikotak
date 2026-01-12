@@ -18,30 +18,38 @@ experiences:
     overview: Charter Communications is a leading broadband connectivity company and cable operator serving more than 32 million customers in 41 states through its Spectrum brand.
   positions:
   - designation: Principal Engineer
-    start: Feb 2024
+    start: May 2022
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Working on the cloud virtualization architecture team within the network technology group at Charter. Responsibilities include planning, design, implementation, and optimization of virtual and containerized systems.
-    - Lead development of Red Hat OpenShift based Edge data center platform to host container network functions.
-    - Built an ArgoCD GitOps pipeline to automate the management of OpenShift infrastructure and application lifecycles.
-    - Create design specifications, system builds, configuration guides and related documentation.
-    - Contribute to strategic architecture and roadmap development; provide tiered support across organizations.
+    - Part of the Private Cloud Engineering team within the Enterprise Infrastructure Group, responsible for planning, designing, implementing, and operating virtualized and containerized telco cloud systems.
+    - Led development and implementation of Red Hat OpenShift-based platforms supporting enterprise and VNF/CNF workloads across multiple distributed data centers, including edge locations.
+    - Developed Ansible automation for bare-metal OpenShift cluster deployment, including node provisioning, day-0/day-1 configuration, operator installation, and cluster and platform upgrades.
+    - Delivered KubeVirt-based virtualization, running KVM virtual machines natively on Kubernetes alongside containerized workloads for mixed legacy and cloud-native use cases.
+    - Led certification and validation initiatives for packet acceleration, Kubernetes CNI, load balancing, and service exposure using BGP, MetalLB, Multus, SR-IOV, Ingress and service mesh solutions.
+    - Designed and implemented GitOps workflows using ArgoCD, enabling declarative management of OpenShift clusters, operators, and application workloads across development, staging, and production environments.
+    - Built and integrated GitLab CI pipelines to automate Kubernetes workflows, covering image builds, configuration validation, security checks, and manifest promotion.
+    - Implemented full-stack monitoring and observability across Kubernetes, compute, network, storage, and virtualization layers to support troubleshooting, capacity planning, and reliability objectives.
+    - Supported Kubernetes application onboarding and operations, including deployment standards, operator lifecycle management, performance tuning, and resolution of cluster and application-level issues.
+    - Contributed to strategic architecture and roadmap development, while providing tiered platform support across multiple organizations.
+
 
   - designation: Network Engineer
     start: June 2016
     end: September 2021
     responsibilities:
-    - Worked on developing the data center network architecture and network application delivery solutions at Charter. Responsibilities include configuring lab environments and test/develop new solutions for the data center.
+    - Developed data center network architectures and application delivery solutions at Charter, including lab configuration, testing, and design of high-performance, multi-tenant networks with a focus on scalability, resiliency, and automation.
+    - Defined and implemented network certification frameworks to validate hardware, firmware, and software interoperability across spine-leaf, overlay, and underlay domains.
     - Worked on development of containers as a service platform to deploy scalable Kubernetes clusters on vSphere and AWS.
-    - Incorporate test and build pipelines for a full stack deployment with infrastructure, Kubernetes and application charts.
-    - Evaluate, test, and optimize all components of NFV including NFVI, VIM and NFVO for edge and data center use cases.
-    - Certified use of packet acceleration technologies and SmartNICs for OpenStack and NFV cloud.
-    - Developed ansible playbooks to automate provisioning and management of Red Hat OpenStack clouds.
-    - Worked on installation, configuration, administration, and troubleshooting of OpenStack and Ceph.
+    - Integrated test and build pipelines for full-stack deployment, covering infrastructure, Kubernetes, and application charts.
+    - Evaluated, tested, and optimized NFV components, including NFVI, VIM, and NFVO, for edge and data center use cases.
+    - Certified use of packet acceleration technologies and SmartNICs for OpenStack and NFV clouds.
+    - Developed Ansible playbooks to automate provisioning and management of Red Hat OpenStack clouds.
+    - Installed, configured, administered, and troubleshot OpenStack and Ceph for production environments.
     - Developed test cases and performed certification testing of data center switching platforms.
-    - Worked on redesign, build and management of the lab consisting of 70+ racks of infrastructure from the ground up including network, compute, storage, virtualization and shared services.
+    - Redesigned, built, and managed a large-scale lab environment with 100+ racks of network, compute, storage, virtualization, and shared services.
+
 
 - company:
     name: Comcast

@@ -43,6 +43,28 @@ curl -i -N -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Host: ikotak.com
 ```
 {{< /note >}}
 
+<!-- Prevent MacBook from sleeping -->
+{{< note title="Prevent MacBook from sleeping" >}}
+```bash
+caffeinate -imsu -t 6000 & # Set time in seconds to stay awake
+pmset displaysleepnow
+```
+{{< /note >}}
+
+<!-- Keep foreground program running after logout -->
+{{< note title="Keep program running after logout" >}}
+```bash
+# Forgot to use nohup myprogram &
+# want to move foreground process to background 
+Ctrl + Z
+[1]+ Stopped   myprogram
+$ disown -h %1
+$ bg 1
+[1]+ myprogram &
+$ logout
+```
+{{< /note >}}
+
 <!-- Convert pfx file to pem file -->
 {{< note title="Convert pfx file to pem file" >}}
 ```bash
